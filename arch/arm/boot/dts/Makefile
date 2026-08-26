@@ -20,6 +20,7 @@ subdir-y += marvell
 subdir-y += mediatek
 subdir-y += microchip
 subdir-y += moxa
+subdir-y += novatek
 subdir-y += nspire
 subdir-y += nuvoton
 subdir-y += nvidia
