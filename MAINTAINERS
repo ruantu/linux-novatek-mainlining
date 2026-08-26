@@ -3247,6 +3247,7 @@ M:	Yu-Tung Chang <mtwget@gmail.com>
 L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
 S:	Maintained
 F:	Documentation/devicetree/bindings/arm/novatek.yaml
+F:	arch/arm/mach-novatek/Kconfig
 
 ARM/NUVOTON MA35 ARCHITECTURE
 M:	Jacky Huang <ychuang3@nuvoton.com>
