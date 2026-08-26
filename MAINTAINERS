@@ -3291,10 +3291,17 @@ F:	drivers/rtc/rtc-ab8500.c
 F:	drivers/rtc/rtc-pl031.c
 F:	drivers/soc/ux500/
 
+ARM/NOVATEK NA510XX SOC SUPPORT
+M:	Yudong Zhang <mtwget@gmail.com>
+L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+S:	Maintained
+F:	arch/arm/boot/dts/novatek/na51089.dtsi
+
 ARM/NOVATEK SOC SUPPORT
 M:	Yudong Zhang <mtwget@gmail.com>
 L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
 S:	Maintained
+F:	arch/arm/boot/dts/novatek/Makefile
 F:	arch/arm/mach-novatek/Kconfig
 
 ARM/NUVOTON MA35 ARCHITECTURE
