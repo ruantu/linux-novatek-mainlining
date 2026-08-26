@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: GPL-2.0-only
+
+menuconfig ARCH_NOVATEK
+	bool "Novatek SoC support"
+	depends on ARCH_MULTI_V7
+	help
+	  Support for Novatek ARMv7 SoCs.
+
+if ARCH_NOVATEK
+
+config MACH_NA51089
+	bool "Novatek NA51089 SoC support"
+	default ARCH_NOVATEK
+	select ARM_GIC
+	select ARM_GLOBAL_TIMER
+	select CACHE_L2X0
+	help
+	  Support for the Novatek NA51089 SoC, also known as NT9856x.
+
+endif
