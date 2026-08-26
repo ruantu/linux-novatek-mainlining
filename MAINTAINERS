@@ -3242,6 +3242,12 @@ F:	drivers/rtc/rtc-ab8500.c
 F:	drivers/rtc/rtc-pl031.c
 F:	drivers/soc/ux500/
 
+ARM/NOVATEK SOC SUPPORT
+M:	Yu-Tung Chang <mtwget@gmail.com>
+L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+S:	Maintained
+F:	Documentation/devicetree/bindings/arm/novatek.yaml
+
 ARM/NUVOTON MA35 ARCHITECTURE
 M:	Jacky Huang <ychuang3@nuvoton.com>
 M:	Shan-Chun Hung <schung@nuvoton.com>
