@@ -3246,6 +3246,7 @@ ARM/NOVATEK NA510XX SOC SUPPORT
 M:	Yu-Tung Chang <mtwget@gmail.com>
 L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
 S:	Maintained
+F:	Documentation/devicetree/bindings/pinctrl/novatek,na51089-pinctrl.yaml
 F:	arch/arm/boot/dts/novatek/na51089.dtsi
 
 ARM/NOVATEK SOC SUPPORT
