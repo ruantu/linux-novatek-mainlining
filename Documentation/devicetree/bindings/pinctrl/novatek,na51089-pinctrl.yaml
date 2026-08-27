@@ -1,0 +1,412 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/pinctrl/novatek,na51089-pinctrl.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Novatek NA51089 pinctrl
+
+maintainers:
+  - Yudong Zhang <mtwget@gmail.com>
+
+allOf:
+  - $ref: pinctrl.yaml#
+
+properties:
+  compatible:
+    const: novatek,na51089-pinctrl
+
+  reg:
+    items:
+      - description: TOP pin multiplexing registers
+      - description: PAD electrical configuration registers
+
+  reg-names:
+    items:
+      - const: top
+      - const: pad
+
+patternProperties:
+  "-pins(-[a-e])?$":
+    type: object
+    allOf:
+      - $ref: pinmux-node.yaml#
+      - $ref: pincfg-node.yaml#
+    additionalProperties: false
+
+    properties:
+      function:
+        enum:
+          - sdio0
+          - sdio1
+          - sdio2
+          - i2c0
+          - i2c1
+          - i2c2
+          - uart0
+          - uart1
+          - uart2
+          - spi0
+          - spi1
+          - spi2
+          - fspi
+          - remote
+          - pwm0
+          - pwm1
+          - pwm2
+          - pwm3
+          - pwm4
+          - pwm5
+          - pwm6
+          - pwm7
+          - pwm8
+          - pwm9
+          - pwm10
+          - pwm11
+          - picnt0
+          - picnt1
+          - picnt2
+          - i2s
+          - dmic
+          - rmii
+          - eth-led
+          - rtc
+          - spclk
+          - sp2clk
+          - jtag
+          - adc
+
+      groups:
+        items:
+          enum:
+            - sdio0-pins
+            - sdio1-pins-a
+            - sdio1-pins-b
+            - sdio1-pins-c
+            - sdio2-4bit-pins
+            - sdio2-8bit-pins
+            - i2c0-pins-a
+            - i2c0-pins-b
+            - i2c1-pins-a
+            - i2c1-pins-b
+            - i2c2-pins-a
+            - i2c2-pins-b
+            - i2c2-pins-c
+            - uart0-pins
+            - uart0-tx-pins
+            - uart1-pins-a
+            - uart1-rts-cts-pins-a
+            - uart1-de-pins-a
+            - uart1-pins-b
+            - uart1-rts-cts-pins-b
+            - uart1-de-pins-b
+            - uart1-pins-c
+            - uart1-rts-cts-pins-c
+            - uart1-de-pins-c
+            - uart2-pins-a
+            - uart2-rts-cts-pins-a
+            - uart2-de-pins-a
+            - uart2-pins-b
+            - uart2-rts-cts-pins-b
+            - uart2-de-pins-b
+            - uart2-pins-c
+            - uart2-rts-cts-pins-c
+            - uart2-de-pins-c
+            - uart2-pins-d
+            - uart2-pins-e
+            - spi0-pins-a
+            - spi0-dual-io-pins-a
+            - spi0-pins-b
+            - spi0-dual-io-pins-b
+            - spi1-pins-a
+            - spi1-dual-io-pins-a
+            - spi1-pins-b
+            - spi1-dual-io-pins-b
+            - spi2-pins-a
+            - spi2-dual-io-pins-a
+            - spi2-pins-b
+            - spi2-dual-io-pins-b
+            - spi2-pins-c
+            - spi2-dual-io-pins-c
+            - spi2-rdy-pins-a
+            - spi2-rdy-pins-b
+            - spi2-rdy-pins-c
+            - fspi-pins
+            - remote-pins-a
+            - remote-pins-b
+            - remote-ext-pins-a
+            - remote-ext-pins-b
+            - pwm0-pins-a
+            - pwm0-pins-b
+            - pwm0-pins-c
+            - pwm0-pins-d
+            - pwm0-pins-e
+            - pwm1-pins-a
+            - pwm1-pins-b
+            - pwm1-pins-c
+            - pwm1-pins-d
+            - pwm1-pins-e
+            - pwm2-pins-a
+            - pwm2-pins-b
+            - pwm2-pins-c
+            - pwm2-pins-d
+            - pwm2-pins-e
+            - pwm3-pins-a
+            - pwm3-pins-b
+            - pwm3-pins-c
+            - pwm3-pins-d
+            - pwm3-pins-e
+            - pwm4-pins-a
+            - pwm4-pins-b
+            - pwm4-pins-c
+            - pwm4-pins-d
+            - pwm4-pins-e
+            - pwm5-pins-a
+            - pwm5-pins-b
+            - pwm5-pins-c
+            - pwm5-pins-d
+            - pwm5-pins-e
+            - pwm6-pins-a
+            - pwm6-pins-b
+            - pwm6-pins-c
+            - pwm6-pins-d
+            - pwm6-pins-e
+            - pwm7-pins-a
+            - pwm7-pins-b
+            - pwm7-pins-c
+            - pwm7-pins-d
+            - pwm7-pins-e
+            - pwm8-pins-a
+            - pwm8-pins-b
+            - pwm8-pins-c
+            - pwm8-pins-d
+            - pwm9-pins-a
+            - pwm9-pins-b
+            - pwm9-pins-c
+            - pwm9-pins-d
+            - pwm10-pins-a
+            - pwm10-pins-b
+            - pwm10-pins-c
+            - pwm10-pins-d
+            - pwm11-pins-a
+            - pwm11-pins-b
+            - pwm11-pins-c
+            - pwm11-pins-d
+            - pwm11-pins-e
+            - picnt0-pins-a
+            - picnt0-pins-b
+            - picnt1-pins-a
+            - picnt1-pins-b
+            - picnt2-pins-a
+            - picnt2-pins-b
+            - i2s-pins-a
+            - i2s-pins-b
+            - i2s-mclk-pins-a
+            - i2s-mclk-pins-b
+            - dmic-pins-a
+            - dmic-pins-b
+            - dmic-pins-c
+            - rmii-pins-a
+            - rmii-pins-b
+            - mdio-pins-a
+            - mdio-pins-b
+            - mdio-internal-pins
+            - eth-extclk-pins-a
+            - eth-extclk-pins-b
+            - eth-led-pins-a
+            - eth-led-pins-b
+            - rtc-clk-pins
+            - spclk-pins-a
+            - spclk-pins-b
+            - spclk-pins-c
+            - sp2clk-pins-a
+            - sp2clk-pins-b
+            - sp2clk-pins-c
+            - jtag-pins
+            - adc0-pins
+            - adc1-pins
+            - adc2-pins
+
+      pins:
+        items:
+          enum:
+            - cgpio0
+            - cgpio1
+            - cgpio2
+            - cgpio3
+            - cgpio4
+            - cgpio5
+            - cgpio6
+            - cgpio7
+            - cgpio8
+            - cgpio9
+            - cgpio10
+            - cgpio11
+            - cgpio12
+            - cgpio13
+            - cgpio14
+            - cgpio15
+            - cgpio16
+            - cgpio17
+            - cgpio18
+            - cgpio19
+            - cgpio20
+            - cgpio21
+            - cgpio22
+            - pgpio0
+            - pgpio1
+            - pgpio2
+            - pgpio3
+            - pgpio4
+            - pgpio5
+            - pgpio6
+            - pgpio7
+            - pgpio8
+            - pgpio9
+            - pgpio10
+            - pgpio11
+            - pgpio12
+            - pgpio13
+            - pgpio14
+            - pgpio15
+            - pgpio16
+            - pgpio17
+            - pgpio18
+            - pgpio19
+            - pgpio20
+            - pgpio21
+            - pgpio22
+            - pgpio23
+            - pgpio24
+            - pgpio25
+            - sgpio0
+            - sgpio1
+            - sgpio2
+            - sgpio3
+            - sgpio4
+            - sgpio5
+            - sgpio6
+            - sgpio7
+            - sgpio8
+            - lgpio0
+            - lgpio1
+            - lgpio2
+            - lgpio3
+            - lgpio4
+            - lgpio5
+            - lgpio6
+            - lgpio7
+            - lgpio8
+            - lgpio9
+            - dgpio0
+            - dgpio1
+            - dgpio2
+            - dgpio3
+            - dgpio4
+            - dgpio5
+            - dgpio6
+            - dgpio7
+            - hgpio0
+            - hgpio1
+            - hgpio2
+            - hgpio3
+            - hgpio4
+            - hgpio5
+            - hgpio6
+            - hgpio7
+            - hgpio8
+            - hgpio9
+            - hgpio10
+            - hgpio11
+            - agpio0
+            - agpio1
+            - agpio2
+            - dsigpio0
+            - dsigpio1
+            - dsigpio2
+            - dsigpio3
+            - dsigpio4
+            - dsigpio5
+            - dsigpio6
+            - dsigpio7
+            - dsigpio8
+            - dsigpio9
+            - dsigpio10
+
+      bias-bus-hold: true
+      bias-disable: true
+
+      bias-pull-down:
+        type: boolean
+
+      bias-pull-up:
+        type: boolean
+
+      drive-strength:
+        enum: [3, 4, 6, 8, 9, 10, 12, 15, 16, 18, 21, 24]
+
+    oneOf:
+      - required:
+          - function
+          - groups
+        properties:
+          pins: false
+      - required:
+          - groups
+        properties:
+          function: false
+          pins: false
+      - required:
+          - pins
+        properties:
+          function: false
+          groups: false
+
+required:
+  - compatible
+  - reg
+  - reg-names
+
+additionalProperties: false
+
+examples:
+  - |
+    / {
+      #address-cells = <1>;
+      #size-cells = <1>;
+
+      pinctrl: pinctrl@f0010000 {
+        compatible = "novatek,na51089-pinctrl";
+        reg = <0xf0010000 0x1000>,
+              <0xf0030000 0x2000>;
+        reg-names = "top", "pad";
+
+        uart0-default-pins {
+          function = "uart0";
+          groups = "uart0-pins";
+          bias-pull-up;
+          drive-strength = <8>;
+        };
+      };
+    };
+
+  - |
+    / {
+      #address-cells = <1>;
+      #size-cells = <1>;
+
+      pinctrl@f0010000 {
+        compatible = "novatek,na51089-pinctrl";
+        reg = <0xf0010000 0x1000>,
+              <0xf0030000 0x2000>;
+        reg-names = "top", "pad";
+
+        high-speed-input-pins {
+          pins = "hgpio0", "hgpio1";
+          bias-bus-hold;
+          drive-strength = <10>;
+        };
+      };
+    };
+
+...
