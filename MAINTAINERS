@@ -3295,8 +3295,10 @@ ARM/NOVATEK NA510XX SOC SUPPORT
 M:	Yudong Zhang <mtwget@gmail.com>
 L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
 S:	Maintained
+F:	Documentation/devicetree/bindings/gpio/novatek,na51089-gpio.yaml
 F:	Documentation/devicetree/bindings/pinctrl/novatek,na51089-pinctrl.yaml
 F:	arch/arm/boot/dts/novatek/na51089.dtsi
+F:	include/dt-bindings/gpio/novatek,na51089-gpio.h
 
 ARM/NOVATEK SOC SUPPORT
 M:	Yudong Zhang <mtwget@gmail.com>
