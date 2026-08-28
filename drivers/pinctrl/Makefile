@@ -80,6 +80,7 @@ obj-$(CONFIG_PINCTRL_MESON)	+= meson/
 obj-y				+= microchip/
 obj-y				+= mvebu/
 obj-y				+= nomadik/
+obj-y				+= novatek/
 obj-y				+= nuvoton/
 obj-y				+= nxp/
 obj-$(CONFIG_PINCTRL_PXA)	+= pxa/
