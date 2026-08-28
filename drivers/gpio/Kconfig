@@ -554,6 +554,16 @@ config GPIO_NOMADIK
 	  It is deeply interconnected with the associated pinctrl driver as GPIO
 	  registers handle muxing ("alternate functions") as well.
 
+config GPIO_NOVATEK
+	tristate "Novatek GPIO support"
+	depends on (ARCH_NOVATEK || COMPILE_TEST) && OF_GPIO
+	select GPIOLIB_IRQCHIP
+	help
+	  Say yes here to support the GPIO controller and GPIO interrupt
+	  controller found on Novatek SoCs. The driver currently supports
+	  the NA51089 SoC, including pin configuration forwarding and the 40
+	  GPIO lines that can be routed to the parent interrupt controller.
+
 config GPIO_NPCM_SGPIO
 	bool "Nuvoton SGPIO support"
 	depends on ARCH_NPCM || COMPILE_TEST
