@@ -3297,6 +3297,7 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
 S:	Maintained
 F:	Documentation/devicetree/bindings/gpio/novatek,na51089-gpio.yaml
 F:	Documentation/devicetree/bindings/pinctrl/novatek,na51089-pinctrl.yaml
+F:	arch/arm/boot/dts/novatek/na51089-pinctrl.dtsi
 F:	arch/arm/boot/dts/novatek/na51089.dtsi
 F:	drivers/gpio/gpio-novatek.c
 F:	drivers/pinctrl/novatek/pinctrl-na51089.c

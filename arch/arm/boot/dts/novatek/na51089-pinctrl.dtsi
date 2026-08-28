@@ -1,0 +1,886 @@
+// SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+
+&pinctrl {
+	/omit-if-no-ref/
+	sdio0_pins: sdio0-pins {
+		function = "sdio0";
+		groups = "sdio0-pins";
+	};
+
+	/omit-if-no-ref/
+	sdio1_pins_a: sdio1-pins-a {
+		function = "sdio1";
+		groups = "sdio1-pins-a";
+	};
+
+	/omit-if-no-ref/
+	sdio1_pins_b: sdio1-pins-b {
+		function = "sdio1";
+		groups = "sdio1-pins-b";
+	};
+
+	/omit-if-no-ref/
+	sdio1_pins_c: sdio1-pins-c {
+		function = "sdio1";
+		groups = "sdio1-pins-c";
+	};
+
+	/omit-if-no-ref/
+	sdio2_4bit_pins: sdio2-4bit-pins {
+		function = "sdio2";
+		groups = "sdio2-4bit-pins";
+	};
+
+	/omit-if-no-ref/
+	sdio2_8bit_pins: sdio2-8bit-pins {
+		function = "sdio2";
+		groups = "sdio2-8bit-pins";
+	};
+
+	/omit-if-no-ref/
+	i2c0_pins_a: i2c0-pins-a {
+		function = "i2c0";
+		groups = "i2c0-pins-a";
+	};
+
+	/omit-if-no-ref/
+	i2c0_pins_b: i2c0-pins-b {
+		function = "i2c0";
+		groups = "i2c0-pins-b";
+	};
+
+	/omit-if-no-ref/
+	i2c1_pins_a: i2c1-pins-a {
+		function = "i2c1";
+		groups = "i2c1-pins-a";
+	};
+
+	/omit-if-no-ref/
+	i2c1_pins_b: i2c1-pins-b {
+		function = "i2c1";
+		groups = "i2c1-pins-b";
+	};
+
+	/omit-if-no-ref/
+	i2c2_pins_a: i2c2-pins-a {
+		function = "i2c2";
+		groups = "i2c2-pins-a";
+	};
+
+	/omit-if-no-ref/
+	i2c2_pins_b: i2c2-pins-b {
+		function = "i2c2";
+		groups = "i2c2-pins-b";
+	};
+
+	/omit-if-no-ref/
+	i2c2_pins_c: i2c2-pins-c {
+		function = "i2c2";
+		groups = "i2c2-pins-c";
+	};
+
+	/omit-if-no-ref/
+	uart0_pins: uart0-pins {
+		function = "uart0";
+		groups = "uart0-pins";
+	};
+
+	/omit-if-no-ref/
+	uart0_tx_pins: uart0-tx-pins {
+		function = "uart0";
+		groups = "uart0-tx-pins";
+	};
+
+	/omit-if-no-ref/
+	uart1_pins_a: uart1-pins-a {
+		function = "uart1";
+		groups = "uart1-pins-a";
+	};
+
+	/omit-if-no-ref/
+	uart1_rts_cts_pins_a: uart1-rts-cts-pins-a {
+		function = "uart1";
+		groups = "uart1-rts-cts-pins-a";
+	};
+
+	/omit-if-no-ref/
+	uart1_de_pins_a: uart1-de-pins-a {
+		function = "uart1";
+		groups = "uart1-de-pins-a";
+	};
+
+	/omit-if-no-ref/
+	uart1_pins_b: uart1-pins-b {
+		function = "uart1";
+		groups = "uart1-pins-b";
+	};
+
+	/omit-if-no-ref/
+	uart1_rts_cts_pins_b: uart1-rts-cts-pins-b {
+		function = "uart1";
+		groups = "uart1-rts-cts-pins-b";
+	};
+
+	/omit-if-no-ref/
+	uart1_de_pins_b: uart1-de-pins-b {
+		function = "uart1";
+		groups = "uart1-de-pins-b";
+	};
+
+	/omit-if-no-ref/
+	uart1_pins_c: uart1-pins-c {
+		function = "uart1";
+		groups = "uart1-pins-c";
+	};
+
+	/omit-if-no-ref/
+	uart1_rts_cts_pins_c: uart1-rts-cts-pins-c {
+		function = "uart1";
+		groups = "uart1-rts-cts-pins-c";
+	};
+
+	/omit-if-no-ref/
+	uart1_de_pins_c: uart1-de-pins-c {
+		function = "uart1";
+		groups = "uart1-de-pins-c";
+	};
+
+	/omit-if-no-ref/
+	uart2_pins_a: uart2-pins-a {
+		function = "uart2";
+		groups = "uart2-pins-a";
+	};
+
+	/omit-if-no-ref/
+	uart2_rts_cts_pins_a: uart2-rts-cts-pins-a {
+		function = "uart2";
+		groups = "uart2-rts-cts-pins-a";
+	};
+
+	/omit-if-no-ref/
+	uart2_de_pins_a: uart2-de-pins-a {
+		function = "uart2";
+		groups = "uart2-de-pins-a";
+	};
+
+	/omit-if-no-ref/
+	uart2_pins_b: uart2-pins-b {
+		function = "uart2";
+		groups = "uart2-pins-b";
+	};
+
+	/omit-if-no-ref/
+	uart2_rts_cts_pins_b: uart2-rts-cts-pins-b {
+		function = "uart2";
+		groups = "uart2-rts-cts-pins-b";
+	};
+
+	/omit-if-no-ref/
+	uart2_de_pins_b: uart2-de-pins-b {
+		function = "uart2";
+		groups = "uart2-de-pins-b";
+	};
+
+	/omit-if-no-ref/
+	uart2_pins_c: uart2-pins-c {
+		function = "uart2";
+		groups = "uart2-pins-c";
+	};
+
+	/omit-if-no-ref/
+	uart2_rts_cts_pins_c: uart2-rts-cts-pins-c {
+		function = "uart2";
+		groups = "uart2-rts-cts-pins-c";
+	};
+
+	/omit-if-no-ref/
+	uart2_de_pins_c: uart2-de-pins-c {
+		function = "uart2";
+		groups = "uart2-de-pins-c";
+	};
+
+	/omit-if-no-ref/
+	uart2_pins_d: uart2-pins-d {
+		function = "uart2";
+		groups = "uart2-pins-d";
+	};
+
+	/omit-if-no-ref/
+	uart2_pins_e: uart2-pins-e {
+		function = "uart2";
+		groups = "uart2-pins-e";
+	};
+
+	/omit-if-no-ref/
+	spi0_pins_a: spi0-pins-a {
+		function = "spi0";
+		groups = "spi0-pins-a";
+	};
+
+	/omit-if-no-ref/
+	spi0_dual_io_pins_a: spi0-dual-io-pins-a {
+		function = "spi0";
+		groups = "spi0-dual-io-pins-a";
+	};
+
+	/omit-if-no-ref/
+	spi0_pins_b: spi0-pins-b {
+		function = "spi0";
+		groups = "spi0-pins-b";
+	};
+
+	/omit-if-no-ref/
+	spi0_dual_io_pins_b: spi0-dual-io-pins-b {
+		function = "spi0";
+		groups = "spi0-dual-io-pins-b";
+	};
+
+	/omit-if-no-ref/
+	spi1_pins_a: spi1-pins-a {
+		function = "spi1";
+		groups = "spi1-pins-a";
+	};
+
+	/omit-if-no-ref/
+	spi1_dual_io_pins_a: spi1-dual-io-pins-a {
+		function = "spi1";
+		groups = "spi1-dual-io-pins-a";
+	};
+
+	/omit-if-no-ref/
+	spi1_pins_b: spi1-pins-b {
+		function = "spi1";
+		groups = "spi1-pins-b";
+	};
+
+	/omit-if-no-ref/
+	spi1_dual_io_pins_b: spi1-dual-io-pins-b {
+		function = "spi1";
+		groups = "spi1-dual-io-pins-b";
+	};
+
+	/omit-if-no-ref/
+	spi2_pins_a: spi2-pins-a {
+		function = "spi2";
+		groups = "spi2-pins-a";
+	};
+
+	/omit-if-no-ref/
+	spi2_dual_io_pins_a: spi2-dual-io-pins-a {
+		function = "spi2";
+		groups = "spi2-dual-io-pins-a";
+	};
+
+	/omit-if-no-ref/
+	spi2_pins_b: spi2-pins-b {
+		function = "spi2";
+		groups = "spi2-pins-b";
+	};
+
+	/omit-if-no-ref/
+	spi2_dual_io_pins_b: spi2-dual-io-pins-b {
+		function = "spi2";
+		groups = "spi2-dual-io-pins-b";
+	};
+
+	/omit-if-no-ref/
+	spi2_pins_c: spi2-pins-c {
+		function = "spi2";
+		groups = "spi2-pins-c";
+	};
+
+	/omit-if-no-ref/
+	spi2_dual_io_pins_c: spi2-dual-io-pins-c {
+		function = "spi2";
+		groups = "spi2-dual-io-pins-c";
+	};
+
+	/omit-if-no-ref/
+	spi2_rdy_pins_a: spi2-rdy-pins-a {
+		function = "spi2";
+		groups = "spi2-rdy-pins-a";
+	};
+
+	/omit-if-no-ref/
+	spi2_rdy_pins_b: spi2-rdy-pins-b {
+		function = "spi2";
+		groups = "spi2-rdy-pins-b";
+	};
+
+	/omit-if-no-ref/
+	spi2_rdy_pins_c: spi2-rdy-pins-c {
+		function = "spi2";
+		groups = "spi2-rdy-pins-c";
+	};
+
+	/omit-if-no-ref/
+	fspi_pins: fspi-pins {
+		function = "fspi";
+		groups = "fspi-pins";
+	};
+
+	/omit-if-no-ref/
+	remote_pins_a: remote-pins-a {
+		function = "remote";
+		groups = "remote-pins-a";
+	};
+
+	/omit-if-no-ref/
+	remote_pins_b: remote-pins-b {
+		function = "remote";
+		groups = "remote-pins-b";
+	};
+
+	/omit-if-no-ref/
+	remote_ext_pins_a: remote-ext-pins-a {
+		function = "remote";
+		groups = "remote-ext-pins-a";
+	};
+
+	/omit-if-no-ref/
+	remote_ext_pins_b: remote-ext-pins-b {
+		function = "remote";
+		groups = "remote-ext-pins-b";
+	};
+
+	/omit-if-no-ref/
+	pwm0_pins_a: pwm0-pins-a {
+		function = "pwm0";
+		groups = "pwm0-pins-a";
+	};
+
+	/omit-if-no-ref/
+	pwm0_pins_b: pwm0-pins-b {
+		function = "pwm0";
+		groups = "pwm0-pins-b";
+	};
+
+	/omit-if-no-ref/
+	pwm0_pins_c: pwm0-pins-c {
+		function = "pwm0";
+		groups = "pwm0-pins-c";
+	};
+
+	/omit-if-no-ref/
+	pwm0_pins_d: pwm0-pins-d {
+		function = "pwm0";
+		groups = "pwm0-pins-d";
+	};
+
+	/omit-if-no-ref/
+	pwm0_pins_e: pwm0-pins-e {
+		function = "pwm0";
+		groups = "pwm0-pins-e";
+	};
+
+	/omit-if-no-ref/
+	pwm1_pins_a: pwm1-pins-a {
+		function = "pwm1";
+		groups = "pwm1-pins-a";
+	};
+
+	/omit-if-no-ref/
+	pwm1_pins_b: pwm1-pins-b {
+		function = "pwm1";
+		groups = "pwm1-pins-b";
+	};
+
+	/omit-if-no-ref/
+	pwm1_pins_c: pwm1-pins-c {
+		function = "pwm1";
+		groups = "pwm1-pins-c";
+	};
+
+	/omit-if-no-ref/
+	pwm1_pins_d: pwm1-pins-d {
+		function = "pwm1";
+		groups = "pwm1-pins-d";
+	};
+
+	/omit-if-no-ref/
+	pwm1_pins_e: pwm1-pins-e {
+		function = "pwm1";
+		groups = "pwm1-pins-e";
+	};
+
+	/omit-if-no-ref/
+	pwm2_pins_a: pwm2-pins-a {
+		function = "pwm2";
+		groups = "pwm2-pins-a";
+	};
+
+	/omit-if-no-ref/
+	pwm2_pins_b: pwm2-pins-b {
+		function = "pwm2";
+		groups = "pwm2-pins-b";
+	};
+
+	/omit-if-no-ref/
+	pwm2_pins_c: pwm2-pins-c {
+		function = "pwm2";
+		groups = "pwm2-pins-c";
+	};
+
+	/omit-if-no-ref/
+	pwm2_pins_d: pwm2-pins-d {
+		function = "pwm2";
+		groups = "pwm2-pins-d";
+	};
+
+	/omit-if-no-ref/
+	pwm2_pins_e: pwm2-pins-e {
+		function = "pwm2";
+		groups = "pwm2-pins-e";
+	};
+
+	/omit-if-no-ref/
+	pwm3_pins_a: pwm3-pins-a {
+		function = "pwm3";
+		groups = "pwm3-pins-a";
+	};
+
+	/omit-if-no-ref/
+	pwm3_pins_b: pwm3-pins-b {
+		function = "pwm3";
+		groups = "pwm3-pins-b";
+	};
+
+	/omit-if-no-ref/
+	pwm3_pins_c: pwm3-pins-c {
+		function = "pwm3";
+		groups = "pwm3-pins-c";
+	};
+
+	/omit-if-no-ref/
+	pwm3_pins_d: pwm3-pins-d {
+		function = "pwm3";
+		groups = "pwm3-pins-d";
+	};
+
+	/omit-if-no-ref/
+	pwm3_pins_e: pwm3-pins-e {
+		function = "pwm3";
+		groups = "pwm3-pins-e";
+	};
+
+	/omit-if-no-ref/
+	pwm4_pins_a: pwm4-pins-a {
+		function = "pwm4";
+		groups = "pwm4-pins-a";
+	};
+
+	/omit-if-no-ref/
+	pwm4_pins_b: pwm4-pins-b {
+		function = "pwm4";
+		groups = "pwm4-pins-b";
+	};
+
+	/omit-if-no-ref/
+	pwm4_pins_c: pwm4-pins-c {
+		function = "pwm4";
+		groups = "pwm4-pins-c";
+	};
+
+	/omit-if-no-ref/
+	pwm4_pins_d: pwm4-pins-d {
+		function = "pwm4";
+		groups = "pwm4-pins-d";
+	};
+
+	/omit-if-no-ref/
+	pwm4_pins_e: pwm4-pins-e {
+		function = "pwm4";
+		groups = "pwm4-pins-e";
+	};
+
+	/omit-if-no-ref/
+	pwm5_pins_a: pwm5-pins-a {
+		function = "pwm5";
+		groups = "pwm5-pins-a";
+	};
+
+	/omit-if-no-ref/
+	pwm5_pins_b: pwm5-pins-b {
+		function = "pwm5";
+		groups = "pwm5-pins-b";
+	};
+
+	/omit-if-no-ref/
+	pwm5_pins_c: pwm5-pins-c {
+		function = "pwm5";
+		groups = "pwm5-pins-c";
+	};
+
+	/omit-if-no-ref/
+	pwm5_pins_d: pwm5-pins-d {
+		function = "pwm5";
+		groups = "pwm5-pins-d";
+	};
+
+	/omit-if-no-ref/
+	pwm5_pins_e: pwm5-pins-e {
+		function = "pwm5";
+		groups = "pwm5-pins-e";
+	};
+
+	/omit-if-no-ref/
+	pwm6_pins_a: pwm6-pins-a {
+		function = "pwm6";
+		groups = "pwm6-pins-a";
+	};
+
+	/omit-if-no-ref/
+	pwm6_pins_b: pwm6-pins-b {
+		function = "pwm6";
+		groups = "pwm6-pins-b";
+	};
+
+	/omit-if-no-ref/
+	pwm6_pins_c: pwm6-pins-c {
+		function = "pwm6";
+		groups = "pwm6-pins-c";
+	};
+
+	/omit-if-no-ref/
+	pwm6_pins_d: pwm6-pins-d {
+		function = "pwm6";
+		groups = "pwm6-pins-d";
+	};
+
+	/omit-if-no-ref/
+	pwm6_pins_e: pwm6-pins-e {
+		function = "pwm6";
+		groups = "pwm6-pins-e";
+	};
+
+	/omit-if-no-ref/
+	pwm7_pins_a: pwm7-pins-a {
+		function = "pwm7";
+		groups = "pwm7-pins-a";
+	};
+
+	/omit-if-no-ref/
+	pwm7_pins_b: pwm7-pins-b {
+		function = "pwm7";
+		groups = "pwm7-pins-b";
+	};
+
+	/omit-if-no-ref/
+	pwm7_pins_c: pwm7-pins-c {
+		function = "pwm7";
+		groups = "pwm7-pins-c";
+	};
+
+	/omit-if-no-ref/
+	pwm7_pins_d: pwm7-pins-d {
+		function = "pwm7";
+		groups = "pwm7-pins-d";
+	};
+
+	/omit-if-no-ref/
+	pwm7_pins_e: pwm7-pins-e {
+		function = "pwm7";
+		groups = "pwm7-pins-e";
+	};
+
+	/omit-if-no-ref/
+	pwm8_pins_a: pwm8-pins-a {
+		function = "pwm8";
+		groups = "pwm8-pins-a";
+	};
+
+	/omit-if-no-ref/
+	pwm8_pins_b: pwm8-pins-b {
+		function = "pwm8";
+		groups = "pwm8-pins-b";
+	};
+
+	/omit-if-no-ref/
+	pwm8_pins_c: pwm8-pins-c {
+		function = "pwm8";
+		groups = "pwm8-pins-c";
+	};
+
+	/omit-if-no-ref/
+	pwm8_pins_d: pwm8-pins-d {
+		function = "pwm8";
+		groups = "pwm8-pins-d";
+	};
+
+	/omit-if-no-ref/
+	pwm9_pins_a: pwm9-pins-a {
+		function = "pwm9";
+		groups = "pwm9-pins-a";
+	};
+
+	/omit-if-no-ref/
+	pwm9_pins_b: pwm9-pins-b {
+		function = "pwm9";
+		groups = "pwm9-pins-b";
+	};
+
+	/omit-if-no-ref/
+	pwm9_pins_c: pwm9-pins-c {
+		function = "pwm9";
+		groups = "pwm9-pins-c";
+	};
+
+	/omit-if-no-ref/
+	pwm9_pins_d: pwm9-pins-d {
+		function = "pwm9";
+		groups = "pwm9-pins-d";
+	};
+
+	/omit-if-no-ref/
+	pwm10_pins_a: pwm10-pins-a {
+		function = "pwm10";
+		groups = "pwm10-pins-a";
+	};
+
+	/omit-if-no-ref/
+	pwm10_pins_b: pwm10-pins-b {
+		function = "pwm10";
+		groups = "pwm10-pins-b";
+	};
+
+	/omit-if-no-ref/
+	pwm10_pins_c: pwm10-pins-c {
+		function = "pwm10";
+		groups = "pwm10-pins-c";
+	};
+
+	/omit-if-no-ref/
+	pwm10_pins_d: pwm10-pins-d {
+		function = "pwm10";
+		groups = "pwm10-pins-d";
+	};
+
+	/omit-if-no-ref/
+	pwm11_pins_a: pwm11-pins-a {
+		function = "pwm11";
+		groups = "pwm11-pins-a";
+	};
+
+	/omit-if-no-ref/
+	pwm11_pins_b: pwm11-pins-b {
+		function = "pwm11";
+		groups = "pwm11-pins-b";
+	};
+
+	/omit-if-no-ref/
+	pwm11_pins_c: pwm11-pins-c {
+		function = "pwm11";
+		groups = "pwm11-pins-c";
+	};
+
+	/omit-if-no-ref/
+	pwm11_pins_d: pwm11-pins-d {
+		function = "pwm11";
+		groups = "pwm11-pins-d";
+	};
+
+	/omit-if-no-ref/
+	pwm11_pins_e: pwm11-pins-e {
+		function = "pwm11";
+		groups = "pwm11-pins-e";
+	};
+
+	/omit-if-no-ref/
+	picnt0_pins_a: picnt0-pins-a {
+		function = "picnt0";
+		groups = "picnt0-pins-a";
+	};
+
+	/omit-if-no-ref/
+	picnt0_pins_b: picnt0-pins-b {
+		function = "picnt0";
+		groups = "picnt0-pins-b";
+	};
+
+	/omit-if-no-ref/
+	picnt1_pins_a: picnt1-pins-a {
+		function = "picnt1";
+		groups = "picnt1-pins-a";
+	};
+
+	/omit-if-no-ref/
+	picnt1_pins_b: picnt1-pins-b {
+		function = "picnt1";
+		groups = "picnt1-pins-b";
+	};
+
+	/omit-if-no-ref/
+	picnt2_pins_a: picnt2-pins-a {
+		function = "picnt2";
+		groups = "picnt2-pins-a";
+	};
+
+	/omit-if-no-ref/
+	picnt2_pins_b: picnt2-pins-b {
+		function = "picnt2";
+		groups = "picnt2-pins-b";
+	};
+
+	/omit-if-no-ref/
+	i2s_pins_a: i2s-pins-a {
+		function = "i2s";
+		groups = "i2s-pins-a";
+	};
+
+	/omit-if-no-ref/
+	i2s_pins_b: i2s-pins-b {
+		function = "i2s";
+		groups = "i2s-pins-b";
+	};
+
+	/omit-if-no-ref/
+	i2s_mclk_pins_a: i2s-mclk-pins-a {
+		function = "i2s";
+		groups = "i2s-mclk-pins-a";
+	};
+
+	/omit-if-no-ref/
+	i2s_mclk_pins_b: i2s-mclk-pins-b {
+		function = "i2s";
+		groups = "i2s-mclk-pins-b";
+	};
+
+	/omit-if-no-ref/
+	dmic_pins_a: dmic-pins-a {
+		function = "dmic";
+		groups = "dmic-pins-a";
+	};
+
+	/omit-if-no-ref/
+	dmic_pins_b: dmic-pins-b {
+		function = "dmic";
+		groups = "dmic-pins-b";
+	};
+
+	/omit-if-no-ref/
+	dmic_pins_c: dmic-pins-c {
+		function = "dmic";
+		groups = "dmic-pins-c";
+	};
+
+	/omit-if-no-ref/
+	rmii_pins_a: rmii-pins-a {
+		function = "rmii";
+		groups = "rmii-pins-a";
+	};
+
+	/omit-if-no-ref/
+	rmii_pins_b: rmii-pins-b {
+		function = "rmii";
+		groups = "rmii-pins-b";
+	};
+
+	/omit-if-no-ref/
+	mdio_pins_a: mdio-pins-a {
+		function = "rmii";
+		groups = "mdio-pins-a";
+	};
+
+	/omit-if-no-ref/
+	mdio_pins_b: mdio-pins-b {
+		function = "rmii";
+		groups = "mdio-pins-b";
+	};
+
+	/omit-if-no-ref/
+	mdio_internal_pins: mdio-internal-pins {
+		function = "rmii";
+		groups = "mdio-internal-pins";
+	};
+
+	/omit-if-no-ref/
+	eth_extclk_pins_a: eth-extclk-pins-a {
+		function = "rmii";
+		groups = "eth-extclk-pins-a";
+	};
+
+	/omit-if-no-ref/
+	eth_extclk_pins_b: eth-extclk-pins-b {
+		function = "rmii";
+		groups = "eth-extclk-pins-b";
+	};
+
+	/omit-if-no-ref/
+	eth_led_pins_a: eth-led-pins-a {
+		function = "eth-led";
+		groups = "eth-led-pins-a";
+	};
+
+	/omit-if-no-ref/
+	eth_led_pins_b: eth-led-pins-b {
+		function = "eth-led";
+		groups = "eth-led-pins-b";
+	};
+
+	/omit-if-no-ref/
+	rtc_clk_pins: rtc-clk-pins {
+		function = "rtc";
+		groups = "rtc-clk-pins";
+	};
+
+	/omit-if-no-ref/
+	spclk_pins_a: spclk-pins-a {
+		function = "spclk";
+		groups = "spclk-pins-a";
+	};
+
+	/omit-if-no-ref/
+	spclk_pins_b: spclk-pins-b {
+		function = "spclk";
+		groups = "spclk-pins-b";
+	};
+
+	/omit-if-no-ref/
+	spclk_pins_c: spclk-pins-c {
+		function = "spclk";
+		groups = "spclk-pins-c";
+	};
+
+	/omit-if-no-ref/
+	sp2clk_pins_a: sp2clk-pins-a {
+		function = "sp2clk";
+		groups = "sp2clk-pins-a";
+	};
+
+	/omit-if-no-ref/
+	sp2clk_pins_b: sp2clk-pins-b {
+		function = "sp2clk";
+		groups = "sp2clk-pins-b";
+	};
+
+	/omit-if-no-ref/
+	sp2clk_pins_c: sp2clk-pins-c {
+		function = "sp2clk";
+		groups = "sp2clk-pins-c";
+	};
+
+	/omit-if-no-ref/
+	jtag_pins: jtag-pins {
+		function = "jtag";
+		groups = "jtag-pins";
+	};
+
+	/omit-if-no-ref/
+	adc0_pins: adc0-pins {
+		function = "adc";
+		groups = "adc0-pins";
+	};
+
+	/omit-if-no-ref/
+	adc1_pins: adc1-pins {
+		function = "adc";
+		groups = "adc1-pins";
+	};
+
+	/omit-if-no-ref/
+	adc2_pins: adc2-pins {
+		function = "adc";
+		groups = "adc2-pins";
+	};
+
+};
