@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: GPL-2.0-only
+
+config PINCTRL_NOVATEK
+	tristate
+	depends on OF
+	select GENERIC_PINCONF
+	select PINMUX
