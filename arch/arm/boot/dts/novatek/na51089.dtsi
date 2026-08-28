@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 
+#include <dt-bindings/gpio/novatek,na51089-gpio.h>
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include <dt-bindings/interrupt-controller/irq.h>
 
@@ -38,6 +39,25 @@
 			reg = <0xf0010000 0x1000>,
 			      <0xf0030000 0x2000>;
 			reg-names = "top", "pad";
+		};
+
+		gpio: gpio@f0070000 {
+			compatible = "novatek,na51089-gpio";
+			reg = <0xf0070000 0x100>;
+			interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
+			gpio-controller;
+			#gpio-cells = <2>;
+			gpio-ranges = <&pinctrl NA51089_CGPIO(0) NA51089_CGPIO(0) 23>,
+				      <&pinctrl NA51089_PGPIO(0) NA51089_PGPIO(0) 26>,
+				      <&pinctrl NA51089_SGPIO(0) NA51089_SGPIO(0) 9>,
+				      <&pinctrl NA51089_LGPIO(0) NA51089_LGPIO(0) 10>,
+				      <&pinctrl NA51089_DGPIO(0) NA51089_DGPIO(0) 8>,
+				      <&pinctrl NA51089_HGPIO(0) NA51089_HGPIO(0) 12>,
+				      <&pinctrl NA51089_AGPIO(0) NA51089_AGPIO(0) 3>,
+				      <&pinctrl NA51089_DSIGPIO(0) NA51089_DSIGPIO(0) 11>;
+			interrupt-controller;
+			#address-cells = <0>;
+			#interrupt-cells = <2>;
 		};
 
 		uart0: serial@f0290000 {
