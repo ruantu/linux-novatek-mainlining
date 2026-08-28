@@ -5,3 +5,13 @@ config PINCTRL_NOVATEK
 	depends on OF
 	select GENERIC_PINCONF
 	select PINMUX
+
+config PINCTRL_NA51089
+	bool "Novatek NA51089 pinctrl driver" if COMPILE_TEST
+	depends on OF && (MACH_NA51089 || COMPILE_TEST)
+	select PINCTRL_NOVATEK
+	help
+	  Say yes here to enable the pin controller for the Novatek NA51089
+	  (NT9856x) SoC. The driver controls peripheral pin multiplexing,
+	  GPIO mode selection, pull bias, bus hold, and pad drive strength
+	  for the supported pins.
