@@ -14,6 +14,8 @@ config MACH_NA51089
 	select ARM_GIC
 	select ARM_GLOBAL_TIMER
 	select CACHE_L2X0
+	select PINCTRL
+	select PINCTRL_NA51089
 	help
 	  Support for the Novatek NA51089 SoC, also known as NT9856x.
 
