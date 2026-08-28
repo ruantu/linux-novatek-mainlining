@@ -3258,6 +3258,10 @@ S:	Maintained
 F:	Documentation/devicetree/bindings/arm/novatek.yaml
 F:	arch/arm/boot/dts/novatek/Makefile
 F:	arch/arm/mach-novatek/Kconfig
+F:	drivers/pinctrl/novatek/Kconfig
+F:	drivers/pinctrl/novatek/Makefile
+F:	drivers/pinctrl/novatek/pinctrl-novatek.c
+F:	drivers/pinctrl/novatek/pinctrl-novatek.h
 
 ARM/NUVOTON MA35 ARCHITECTURE
 M:	Jacky Huang <ychuang3@nuvoton.com>
