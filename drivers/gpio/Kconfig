@@ -542,6 +542,16 @@ config GPIO_MXS
 	select GPIO_GENERIC
 	select GENERIC_IRQ_CHIP
 
+config GPIO_NOVATEK
+	tristate "Novatek GPIO support"
+	depends on (ARCH_NOVATEK || COMPILE_TEST) && OF_GPIO
+	select GPIOLIB_IRQCHIP
+	help
+	  Say yes here to support the GPIO controller and GPIO interrupt
+	  controller found on Novatek SoCs. The driver currently supports
+	  the NA51089 SoC, including pin configuration forwarding and the 40
+	  GPIO lines that can be routed to the parent interrupt controller.
+
 config GPIO_NOMADIK
 	bool "Nomadik GPIO driver"
 	depends on ARCH_U8500 || ARCH_NOMADIK || MACH_EYEQ5 || COMPILE_TEST
