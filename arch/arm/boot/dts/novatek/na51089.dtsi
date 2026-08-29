@@ -1,8 +1,10 @@
 // SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 
+#include <dt-bindings/clock/novatek,na51089-clock.h>
 #include <dt-bindings/gpio/novatek,na51089-gpio.h>
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include <dt-bindings/interrupt-controller/irq.h>
+#include <dt-bindings/reset/novatek,na51089-reset.h>
 
 / {
 	compatible = "novatek,na51089";
@@ -10,10 +12,10 @@
 	#size-cells = <1>;
 	interrupt-parent = <&gic>;
 
-	periph_clk: clock-periph {
+	osc: clock-osc {
 		compatible = "fixed-clock";
 		#clock-cells = <0>;
-		clock-frequency = <120000000>;
+		clock-frequency = <12000000>;
 	};
 
 	cpus {
@@ -41,6 +43,15 @@
 			reg-names = "top", "pad";
 		};
 
+		cgu: clock-controller@f0020000 {
+			compatible = "novatek,na51089-cgu";
+			reg = <0xf0020000 0x5000>;
+			clocks = <&osc>;
+			clock-names = "osc";
+			#clock-cells = <1>;
+			#reset-cells = <1>;
+		};
+
 		gpio: gpio@f0070000 {
 			compatible = "novatek,na51089-gpio";
 			reg = <0xf0070000 0x100>;
@@ -63,10 +74,11 @@
 		uart0: serial@f0290000 {
 			compatible = "ns16550a";
 			reg = <0xf0290000 0x1000>;
-			clock-frequency = <24000000>;
+			clocks = <&cgu NA51089_CLK_UART0>;
 			interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
 			reg-io-width = <4>;
 			reg-shift = <2>;
+			resets = <&cgu NA51089_RESET_UART0>;
 
 			status = "disabled";
 		};
@@ -74,7 +86,7 @@
 		timer@ffd00200 {
 			compatible = "arm,cortex-a9-global-timer";
 			reg = <0xffd00200 0x20>;
-			clocks = <&periph_clk>;
+			clocks = <&cgu NA51089_CLK_PERIPH>;
 			interrupts = <GIC_PPI 11
 				      (GIC_CPU_MASK_SIMPLE(1) | IRQ_TYPE_EDGE_RISING)>;
 		};
