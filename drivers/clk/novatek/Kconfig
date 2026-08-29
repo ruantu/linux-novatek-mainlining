@@ -2,3 +2,13 @@
 
 config COMMON_CLK_NOVATEK
 	bool
+
+config COMMON_CLK_NOVATEK_NA51089
+	bool "Clock driver for Novatek NA51089"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on OF && HAS_IOMEM
+	select COMMON_CLK_NOVATEK
+	select RESET_CONTROLLER
+	help
+	  Say yes here to enable clock and reset controller support for
+	  Novatek NT9856x (NA51089) SoCs.
