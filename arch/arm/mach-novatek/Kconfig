@@ -14,6 +14,7 @@ config MACH_NA51089
 	select ARM_GIC
 	select ARM_GLOBAL_TIMER
 	select CACHE_L2X0
+	select COMMON_CLK_NA51089
 	select GPIOLIB
 	select GPIO_NOVATEK
 	select PINCTRL
