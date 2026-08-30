@@ -3312,6 +3312,10 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
 S:	Maintained
 F:	arch/arm/boot/dts/novatek/Makefile
 F:	arch/arm/mach-novatek/Kconfig
+F:	drivers/clk/novatek/Kconfig
+F:	drivers/clk/novatek/Makefile
+F:	drivers/clk/novatek/clk-novatek.c
+F:	drivers/clk/novatek/clk-novatek.h
 F:	drivers/pinctrl/novatek/Kconfig
 F:	drivers/pinctrl/novatek/Makefile
 F:	drivers/pinctrl/novatek/pinctrl-novatek.c
