@@ -83,6 +83,34 @@
 			status = "disabled";
 		};
 
+		uart1: serial@f0300000 {
+			compatible = "novatek,na51089-uart";
+			reg = <0xf0300000 0x1000>;
+			assigned-clocks = <&cgu NA51089_CLK_UART1>;
+			assigned-clock-rates = <48000000>;
+			clocks = <&cgu NA51089_CLK_UART1>;
+			interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
+			reg-io-width = <4>;
+			reg-shift = <2>;
+			resets = <&cgu NA51089_RESET_UART1>;
+
+			status = "disabled";
+		};
+
+		uart2: serial@f0310000 {
+			compatible = "novatek,na51089-uart";
+			reg = <0xf0310000 0x1000>;
+			assigned-clocks = <&cgu NA51089_CLK_UART2>;
+			assigned-clock-rates = <48000000>;
+			clocks = <&cgu NA51089_CLK_UART2>;
+			interrupts = <GIC_SPI 45 IRQ_TYPE_LEVEL_HIGH>;
+			reg-io-width = <4>;
+			reg-shift = <2>;
+			resets = <&cgu NA51089_RESET_UART2>;
+
+			status = "disabled";
+		};
+
 		timer@ffd00200 {
 			compatible = "arm,cortex-a9-global-timer";
 			reg = <0xffd00200 0x20>;
