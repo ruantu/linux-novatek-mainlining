@@ -597,6 +597,20 @@ config SERIAL_8250_NI
 	  To compile this driver as a module, choose M here: the module
 	  will be called 8250_ni.
 
+config SERIAL_8250_NOVATEK
+	tristate "Novatek 8250-based serial port"
+	depends on SERIAL_8250 && OF
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	help
+	  Enable support for the enhanced 8250-compatible UART controllers
+	  found in the Novatek NA51089 SoC. The driver handles vendor-specific
+	  features such as hardware flow control and native RS-485 direction
+	  control.
+
+	  Choose Y if the UART is used as an early console. To compile this
+	  driver as a module, choose M here; the module is called
+	  8250_novatek.
+
 config SERIAL_OF_PLATFORM
 	tristate "Devicetree based probing for 8250 ports"
 	depends on SERIAL_8250 && OF
