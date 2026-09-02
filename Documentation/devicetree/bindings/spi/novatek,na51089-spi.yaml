@@ -1,0 +1,71 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/spi/novatek,na51089-spi.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Novatek NA51089 SPI controller
+
+maintainers:
+  - Yudong Zhang <mtwget@gmail.com>
+
+description: |
+  The NA51089 contains three general-purpose SPI host controllers. Each
+  controller has one native chip select and supports full-duplex transfers.
+
+allOf:
+  - $ref: spi-controller.yaml#
+
+properties:
+  compatible:
+    const: novatek,na51089-spi
+
+  reg:
+    maxItems: 1
+
+  interrupts:
+    maxItems: 1
+
+  clocks:
+    maxItems: 1
+
+  clock-names: false
+
+  resets:
+    maxItems: 1
+
+  reset-names: false
+
+  spi-slave: false
+  dmas: false
+  dma-names: false
+
+required:
+  - compatible
+  - reg
+  - interrupts
+  - clocks
+  - resets
+  - "#address-cells"
+  - "#size-cells"
+
+unevaluatedProperties: false
+
+examples:
+  - |
+    #include <dt-bindings/clock/novatek,na51089-clock.h>
+    #include <dt-bindings/interrupt-controller/arm-gic.h>
+    #include <dt-bindings/interrupt-controller/irq.h>
+    #include <dt-bindings/reset/novatek,na51089-reset.h>
+
+    spi@f0230000 {
+        compatible = "novatek,na51089-spi";
+        reg = <0xf0230000 0x10000>;
+        clocks = <&cgu NA51089_CLK_SPI0>;
+        interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
+        resets = <&cgu NA51089_RESET_SPI0>;
+        #address-cells = <1>;
+        #size-cells = <0>;
+    };
+
+...
