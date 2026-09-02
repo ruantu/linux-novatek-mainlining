@@ -12,6 +12,12 @@
 	#size-cells = <1>;
 	interrupt-parent = <&gic>;
 
+	aliases {
+		spi0 = &spi0;
+		spi1 = &spi1;
+		spi2 = &spi2;
+	};
+
 	osc: clock-osc {
 		compatible = "fixed-clock";
 		#clock-cells = <0>;
@@ -71,6 +77,18 @@
 			#interrupt-cells = <2>;
 		};
 
+		spi0: spi@f0230000 {
+			compatible = "novatek,na51089-spi";
+			reg = <0xf0230000 0x10000>;
+			clocks = <&cgu NA51089_CLK_SPI0>;
+			interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_SPI0>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			status = "disabled";
+		};
+
 		uart0: serial@f0290000 {
 			compatible = "ns16550a";
 			reg = <0xf0290000 0x1000>;
@@ -107,6 +125,30 @@
 			reg-io-width = <4>;
 			reg-shift = <2>;
 			resets = <&cgu NA51089_RESET_UART2>;
+
+			status = "disabled";
+		};
+
+		spi1: spi@f0320000 {
+			compatible = "novatek,na51089-spi";
+			reg = <0xf0320000 0x10000>;
+			clocks = <&cgu NA51089_CLK_SPI1>;
+			interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_SPI1>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			status = "disabled";
+		};
+
+		spi2: spi@f0340000 {
+			compatible = "novatek,na51089-spi";
+			reg = <0xf0340000 0x10000>;
+			clocks = <&cgu NA51089_CLK_SPI2>;
+			interrupts = <GIC_SPI 37 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_SPI2>;
+			#address-cells = <1>;
+			#size-cells = <0>;
 
 			status = "disabled";
 		};
