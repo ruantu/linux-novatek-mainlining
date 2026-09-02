@@ -104,6 +104,7 @@ obj-$(CONFIG_SPI_POLARFIRE_SOC)		+= spi-mpfs.o
 obj-$(CONFIG_SPI_WPCM_FIU)		+= spi-wpcm-fiu.o
 obj-$(CONFIG_SPI_NPCM_FIU)		+= spi-npcm-fiu.o
 obj-$(CONFIG_SPI_NPCM_PSPI)		+= spi-npcm-pspi.o
+obj-$(CONFIG_SPI_NOVATEK)		+= spi-novatek.o
 obj-$(CONFIG_SPI_NXP_FLEXSPI)		+= spi-nxp-fspi.o
 obj-$(CONFIG_SPI_NXP_XSPI)		+= spi-nxp-xspi.o
 obj-$(CONFIG_SPI_OC_TINY)		+= spi-oc-tiny.o
