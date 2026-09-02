@@ -791,6 +791,16 @@ config SPI_NPCM_PSPI
 	  This driver provides support for Nuvoton NPCM BMC
 	  Peripheral SPI controller in master mode.
 
+config SPI_NOVATEK
+	tristate "Novatek SPI controller"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	help
+	  This enables support for the SPI host controllers in Novatek
+	  NT9856x (NA51089) SoCs.
+
+	  Say Y or M here if you want to use this SPI controller.
+	  If unsure, say N.
+
 config SPI_LANTIQ_SSC
 	tristate "Lantiq SSC SPI controller"
 	depends on LANTIQ || X86 || COMPILE_TEST
