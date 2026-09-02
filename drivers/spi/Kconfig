@@ -801,6 +801,16 @@ config SPI_NPCM_PSPI
 	  This driver provides support for Nuvoton NPCM BMC
 	  Peripheral SPI controller in master mode.
 
+config SPI_NOVATEK
+	tristate "Novatek NA51089 SPI controller"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	help
+	  This enables support for the SPI host controllers found in the
+	  Novatek NA51089 SoC. Each controller provides one native chip select
+	  and operates in host mode. The driver uses polling-based PIO transfers
+	  and supports 8- and 16-bit words, all four clock modes, active-high
+	  chip select, and least-significant-bit-first transfers.
+
 config SPI_LANTIQ_SSC
 	tristate "Lantiq SSC SPI controller"
 	depends on LANTIQ || X86 || COMPILE_TEST
