@@ -3307,6 +3307,7 @@ F:	arch/arm/boot/dts/novatek/na51089.dtsi
 F:	drivers/clk/novatek/clk-na51089.c
 F:	drivers/gpio/gpio-novatek.c
 F:	drivers/pinctrl/novatek/pinctrl-na51089.c
+F:	drivers/spi/spi-novatek-fspi.c
 F:	drivers/spi/spi-novatek.c
 F:	drivers/tty/serial/8250/8250_novatek.c
 F:	include/dt-bindings/clock/novatek,na51089-clock.h
