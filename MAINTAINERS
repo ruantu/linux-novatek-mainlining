@@ -3251,6 +3251,7 @@ F:	Documentation/devicetree/bindings/gpio/novatek,na51089-gpio.yaml
 F:	Documentation/devicetree/bindings/pinctrl/novatek,na51089-pinctrl.yaml
 F:	Documentation/devicetree/bindings/power/novatek,na51089-sramctrl.yaml
 F:	Documentation/devicetree/bindings/serial/novatek,na51089-uart.yaml
+F:	Documentation/devicetree/bindings/spi/novatek,na51089-fspi.yaml
 F:	Documentation/devicetree/bindings/spi/novatek,na51089-spi.yaml
 F:	Documentation/devicetree/bindings/timer/novatek,na51089-timer.yaml
 F:	arch/arm/boot/dts/novatek/na51089-pinctrl.dtsi
