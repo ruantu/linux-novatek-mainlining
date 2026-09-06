@@ -1,0 +1,15 @@
+/* SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause) */
+/*
+ * Copyright (C) 2026 Yu-Tung Chang <mtwget@gmail.com>
+ */
+
+#ifndef _DT_BINDINGS_POWER_NOVATEK_NA51089_SRAMCTRL_H
+#define _DT_BINDINGS_POWER_NOVATEK_NA51089_SRAMCTRL_H
+
+#define NA51089_SRAM_SW_FSPI		0
+#define NA51089_SRAM_SW_ETH		1
+#define NA51089_SRAM_SW_USB		2
+#define NA51089_SRAM_SW_RSA		3
+#define NA51089_SRAM_SW_SDIO3		4
+
+#endif /* _DT_BINDINGS_POWER_NOVATEK_NA51089_SRAMCTRL_H */

@@ -3249,6 +3249,7 @@ S:	Maintained
 F:	Documentation/devicetree/bindings/clock/novatek,na51089-cgu.yaml
 F:	Documentation/devicetree/bindings/gpio/novatek,na51089-gpio.yaml
 F:	Documentation/devicetree/bindings/pinctrl/novatek,na51089-pinctrl.yaml
+F:	Documentation/devicetree/bindings/power/novatek,na51089-sramctrl.yaml
 F:	Documentation/devicetree/bindings/serial/novatek,na51089-uart.yaml
 F:	Documentation/devicetree/bindings/spi/novatek,na51089-spi.yaml
 F:	Documentation/devicetree/bindings/timer/novatek,na51089-timer.yaml
@@ -3263,6 +3264,7 @@ F:	drivers/spi/spi-novatek.c
 F:	drivers/tty/serial/8250/8250_novatek.c
 F:	include/dt-bindings/clock/novatek,na51089-clock.h
 F:	include/dt-bindings/gpio/novatek,na51089-gpio.h
+F:	include/dt-bindings/power/novatek,na51089-sramctrl.h
 F:	include/dt-bindings/reset/novatek,na51089-reset.h
 
 ARM/NOVATEK SOC SUPPORT
