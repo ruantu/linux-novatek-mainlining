@@ -3262,6 +3262,7 @@ F:	drivers/tty/serial/8250/8250_novatek.c
 F:	include/dt-bindings/clock/novatek,na51089-clock.h
 F:	include/dt-bindings/gpio/novatek,na51089-gpio.h
 F:	include/dt-bindings/reset/novatek,na51089-reset.h
+F:	include/linux/mfd/syscon/novatek-sramctrl.h
 
 ARM/NOVATEK SOC SUPPORT
 M:	Yu-Tung Chang <mtwget@gmail.com>
