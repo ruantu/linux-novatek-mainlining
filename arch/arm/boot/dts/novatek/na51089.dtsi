@@ -4,6 +4,7 @@
 #include <dt-bindings/gpio/novatek,na51089-gpio.h>
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include <dt-bindings/interrupt-controller/irq.h>
+#include <dt-bindings/power/novatek,na51089-sramctrl.h>
 #include <dt-bindings/reset/novatek,na51089-reset.h>
 
 / {
@@ -86,6 +87,12 @@
 			reg = <0xf0010000 0x1000>,
 			      <0xf0030000 0x2000>;
 			reg-names = "top", "pad";
+		};
+
+		sramctrl: power-controller@f0011000 {
+			compatible = "novatek,na51089-sramctrl";
+			reg = <0xf0011000 0x4>;
+			#power-domain-cells = <1>;
 		};
 
 		cgu: clock-controller@f0020000 {
