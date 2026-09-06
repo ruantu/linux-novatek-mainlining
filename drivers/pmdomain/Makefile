@@ -7,6 +7,7 @@ obj-y					+= bcm/
 obj-y					+= imx/
 obj-y					+= marvell/
 obj-y					+= mediatek/
+obj-y					+= novatek/
 obj-y					+= qcom/
 obj-y					+= renesas/
 obj-y					+= rockchip/

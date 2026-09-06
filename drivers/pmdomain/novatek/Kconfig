@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: GPL-2.0-only
+
+config NOVATEK_SRAMCTRL
+	bool "Novatek NT9856x SRAM power domains"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on PM && OF
+	default y if MACH_NA51089
+	select REGMAP_MMIO
+	select PM_GENERIC_DOMAINS
+	help
+	  Enable power domain support for the internal peripheral SRAMs on
+	  Novatek NT9856x (NA51089) SoCs.
