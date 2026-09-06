@@ -1,0 +1,90 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/spi/novatek,na51089-fspi.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Novatek NA51089 Flash SPI controller
+
+maintainers:
+  - Yudong Zhang <mtwget@gmail.com>
+
+description: |
+  The NA51089 Flash SPI controller supports SPI NAND and SPI NOR memories
+  with a single native chip select and single, dual or quad data transfers.
+
+allOf:
+  - $ref: /schemas/spi/spi-controller.yaml#
+
+properties:
+  compatible:
+    const: novatek,na51089-fspi
+
+  reg:
+    maxItems: 1
+
+  interrupts:
+    maxItems: 1
+
+  clocks:
+    maxItems: 1
+
+  clock-names: false
+
+  resets:
+    maxItems: 1
+
+  reset-names: false
+
+  num-cs:
+    const: 1
+
+  cs-gpios: false
+  spi-slave: false
+  dmas: false
+  dma-names: false
+
+  regmap:
+    $ref: /schemas/types.yaml#/definitions/phandle
+    description:
+      Phandle to the SRAM controller providing the FSPI SRAM shutdown control.
+
+required:
+  - compatible
+  - reg
+  - interrupts
+  - clocks
+  - resets
+  - regmap
+  - "#address-cells"
+  - "#size-cells"
+
+unevaluatedProperties: false
+
+examples:
+  - |
+    #include <dt-bindings/clock/novatek,na51089-clock.h>
+    #include <dt-bindings/interrupt-controller/arm-gic.h>
+    #include <dt-bindings/interrupt-controller/irq.h>
+    #include <dt-bindings/reset/novatek,na51089-reset.h>
+
+    spi@f0400000 {
+        compatible = "novatek,na51089-fspi";
+        reg = <0xf0400000 0x1000>;
+        clocks = <&cgu NA51089_CLK_FSPI>;
+        interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
+        resets = <&cgu NA51089_RESET_FSPI>;
+        regmap = <&sramctrl>;
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        flash@0 {
+            compatible = "spi-nand";
+            reg = <0>;
+            spi-max-frequency = <40000000>;
+            spi-rx-bus-width = <4>;
+            spi-tx-bus-width = <4>;
+        };
+    };
+
+...
