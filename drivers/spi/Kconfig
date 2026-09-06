@@ -801,6 +801,18 @@ config SPI_NPCM_PSPI
 	  This driver provides support for Nuvoton NPCM BMC
 	  Peripheral SPI controller in master mode.
 
+config SPI_NOVATEK_FSPI
+	tristate "Novatek NA51089 flash SPI controller"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on OF
+	select SPI_MEM
+	select MFD_SYSCON
+	help
+	  Enable the flash SPI controller on the Novatek NA51089 SoC.
+	  The driver provides polling-based PIO operations through spi-mem
+	  for SPI NAND and SPI NOR flashes. Internal DMA and host ECC are
+	  not supported.
+
 config SPI_NOVATEK
 	tristate "Novatek NA51089 SPI controller"
 	depends on ARCH_NOVATEK || COMPILE_TEST
