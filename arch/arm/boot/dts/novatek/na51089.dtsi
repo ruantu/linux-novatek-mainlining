@@ -49,6 +49,11 @@
 			reg-names = "top", "pad";
 		};
 
+		sramctrl: system-controller@f0011000 {
+			compatible = "novatek,na51089-sram-controller", "syscon";
+			reg = <0xf0011000 0x4>;
+		};
+
 		cgu: clock-controller@f0020000 {
 			compatible = "novatek,na51089-cgu";
 			reg = <0xf0020000 0x5000>;
