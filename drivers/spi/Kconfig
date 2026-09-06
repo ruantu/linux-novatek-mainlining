@@ -801,6 +801,21 @@ config SPI_NOVATEK
 	  Say Y or M here if you want to use this SPI controller.
 	  If unsure, say N.
 
+config SPI_NOVATEK_FSPI
+	tristate "Novatek flash SPI controller"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on OF
+	depends on MTD
+	select SPI_MEM
+	select MTD_NAND_ECC
+	help
+	  This enables support for the flash SPI controllers in Novatek
+	  NT9856x (NA51089) SoCs, supporting SPI NAND and SPI NOR through
+	  spi-mem.
+
+	  Say Y or M here if you want to use this flash SPI controller.
+	  If unsure, say N.
+
 config SPI_LANTIQ_SSC
 	tristate "Lantiq SSC SPI controller"
 	depends on LANTIQ || X86 || COMPILE_TEST
