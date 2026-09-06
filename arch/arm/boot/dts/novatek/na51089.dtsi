@@ -158,6 +158,19 @@
 			status = "disabled";
 		};
 
+		fspi: spi@f0400000 {
+			compatible = "novatek,na51089-fspi";
+			reg = <0xf0400000 0x1000>;
+			clocks = <&cgu NA51089_CLK_FSPI>;
+			interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_FSPI>;
+			regmap = <&sramctrl>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			status = "disabled";
+		};
+
 		timer@ffd00200 {
 			compatible = "arm,cortex-a9-global-timer";
 			reg = <0xffd00200 0x20>;
