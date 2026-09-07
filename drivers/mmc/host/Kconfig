@@ -526,6 +526,19 @@ config MMC_MESON_MX_SDIO
 	  If you have a controller with this interface, say Y or M here.
 	  If unsure, say N.
 
+config MMC_NOVATEK
+	tristate "Novatek NA51089 SD/SDIO/eMMC host controller"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on OF && COMMON_CLK
+	select MFD_SYSCON
+	select RESET_CONTROLLER
+	help
+	  Support the SD, SDIO and eMMC controllers in Novatek NA51089 SoCs.
+	  Transfers use the controller FIFO in PIO mode at up to 48 MHz.
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called mmc-novatek.
+
 config MMC_MOXART
 	tristate "MOXART SD/MMC Host Controller support"
 	depends on ARCH_MOXART || COMPILE_TEST
