@@ -13,6 +13,9 @@
 	interrupt-parent = <&gic>;
 
 	aliases {
+		mmc0 = &mmc0;
+		mmc1 = &mmc1;
+		mmc2 = &mmc2;
 		spi0 = &spi0;
 		spi1 = &spi1;
 		spi2 = &spi2;
@@ -165,6 +168,49 @@
 			interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
 			resets = <&cgu NA51089_RESET_FSPI>;
 			regmap = <&sramctrl>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			status = "disabled";
+		};
+
+		mmc0: mmc@f0420000 {
+			compatible = "novatek,na51089-mmc";
+			reg = <0xf0420000 0x1000>;
+			clocks = <&cgu NA51089_CLK_SDIO0>;
+			interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_SDIO0>;
+			max-frequency = <48000000>;
+			no-1-8-v;
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			status = "disabled";
+		};
+
+		mmc1: mmc@f0500000 {
+			compatible = "novatek,na51089-mmc";
+			reg = <0xf0500000 0x1000>;
+			clocks = <&cgu NA51089_CLK_SDIO1>;
+			interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_SDIO1>;
+			max-frequency = <48000000>;
+			no-1-8-v;
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			status = "disabled";
+		};
+
+		mmc2: mmc@f0510000 {
+			compatible = "novatek,na51089-mmc";
+			reg = <0xf0510000 0x1000>;
+			clocks = <&cgu NA51089_CLK_SDIO2>;
+			interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_SDIO2>;
+			regmap = <&sramctrl>;
+			max-frequency = <48000000>;
+			no-1-8-v;
 			#address-cells = <1>;
 			#size-cells = <0>;
 
