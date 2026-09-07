@@ -3307,6 +3307,7 @@ F:	arch/arm/boot/dts/novatek/na51089-pinctrl.dtsi
 F:	arch/arm/boot/dts/novatek/na51089.dtsi
 F:	drivers/clk/novatek/clk-na51089.c
 F:	drivers/gpio/gpio-novatek.c
+F:	drivers/mmc/host/mmc-novatek.c
 F:	drivers/pinctrl/novatek/pinctrl-na51089.c
 F:	drivers/spi/spi-novatek-fspi.c
 F:	drivers/spi/spi-novatek.c
