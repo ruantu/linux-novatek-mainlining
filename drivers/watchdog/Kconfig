@@ -1143,6 +1143,17 @@ config SUNPLUS_WATCHDOG
 	  To compile this driver as a module, choose M here: the
 	  module will be called sunplus_wdt.
 
+config NOVATEK_WATCHDOG
+	tristate "Novatek watchdog"
+	depends on OF && (ARCH_NOVATEK || COMPILE_TEST)
+	select WATCHDOG_CORE
+	help
+	  Say Y here to include support for the watchdog timer in Novatek
+	  NT9856x (NA51089) SoCs.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called novatek_wdt.
+
 # X86 (i386 + ia64 + x86_64) Architecture
 
 config ACQUIRE_WDT
