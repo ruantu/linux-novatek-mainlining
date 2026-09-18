@@ -1,0 +1,53 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/watchdog/novatek,na51089-wdt.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Novatek NA51089 watchdog timer
+
+maintainers:
+  - Yudong Zhang <mtwget@gmail.com>
+
+allOf:
+  - $ref: watchdog.yaml#
+
+properties:
+  compatible:
+    const: novatek,na51089-wdt
+
+  reg:
+    maxItems: 1
+
+  clocks:
+    maxItems: 1
+
+  clock-names: false
+
+  resets:
+    maxItems: 1
+
+  reset-names: false
+
+required:
+  - compatible
+  - reg
+  - clocks
+  - resets
+
+unevaluatedProperties: false
+
+examples:
+  - |
+    #include <dt-bindings/clock/novatek,na51089-clock.h>
+    #include <dt-bindings/reset/novatek,na51089-reset.h>
+
+    watchdog@f0050000 {
+        compatible = "novatek,na51089-wdt";
+        reg = <0xf0050000 0x1000>;
+        clocks = <&cgu NA51089_CLK_WDT>;
+        resets = <&cgu NA51089_RESET_WDT>;
+        timeout-sec = <10>;
+    };
+
+...
