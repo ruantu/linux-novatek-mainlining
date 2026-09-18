@@ -3264,6 +3264,7 @@ F:	drivers/pinctrl/novatek/pinctrl-na51089.c
 F:	drivers/spi/spi-novatek-fspi.c
 F:	drivers/spi/spi-novatek.c
 F:	drivers/tty/serial/8250/8250_novatek.c
+F:	drivers/watchdog/novatek_wdt.c
 F:	include/dt-bindings/clock/novatek,na51089-clock.h
 F:	include/dt-bindings/gpio/novatek,na51089-gpio.h
 F:	include/dt-bindings/reset/novatek,na51089-reset.h
