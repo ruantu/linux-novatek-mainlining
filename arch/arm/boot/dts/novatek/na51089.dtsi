@@ -66,6 +66,13 @@
 			#reset-cells = <1>;
 		};
 
+		watchdog: watchdog@f0050000 {
+			compatible = "novatek,na51089-wdt";
+			reg = <0xf0050000 0x1000>;
+			clocks = <&cgu NA51089_CLK_WDT>;
+			resets = <&cgu NA51089_RESET_WDT>;
+		};
+
 		gpio: gpio@f0070000 {
 			compatible = "novatek,na51089-gpio";
 			reg = <0xf0070000 0x100>;
