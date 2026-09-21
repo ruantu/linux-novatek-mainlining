@@ -196,6 +196,18 @@ config POWER_RESET_MT6323
 
 	  Say Y if you have a board where MT6323 could be found.
 
+config POWER_RESET_NOVATEK_PWBC
+	tristate "Novatek PWBC power-off support"
+	depends on MFD_NOVATEK_RTCSYS
+	help
+	  Say yes here to enable system power-off through the power button
+	  controller in supported Novatek RTC system controllers. The driver
+	  registers a system power-off handler and uses the PWBC shutdown
+	  command to remove system power.
+
+	  This driver can also be built as a module. If so, the module
+	  will be called novatek-pwbc.
+
 config POWER_RESET_QNAP
 	bool "QNAP power-off driver"
 	depends on PLAT_ORION
