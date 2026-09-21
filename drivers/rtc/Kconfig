@@ -1515,6 +1515,18 @@ config RTC_DRV_NOVATEK
 	  This driver can also be built as a module. If so, the module
 	  will be called rtc-novatek.
 
+config RTC_DRV_NOVATEK_DRTC
+	tristate "Novatek digital RTC"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on OF && HAS_IOMEM
+	depends on COMMON_CLK
+	help
+	  If you say yes here you get support for the digital RTC in
+	  Novatek NT9856x (NA51089) SoCs, with alarm wakeup from suspend.
+
+	  This driver can also be built as a module. If so, the module
+	  will be called rtc-novatek-drtc.
+
 config RTC_DRV_OMAP
 	tristate "TI OMAP Real Time Clock"
 	depends on ARCH_OMAP || ARCH_DAVINCI || COMPILE_TEST
