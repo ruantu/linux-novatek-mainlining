@@ -1,0 +1,95 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/mfd/novatek,na51089-rtcsys.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Novatek NA51089 RTC System Controller
+
+maintainers:
+  - Yudong Zhang <mtwget@gmail.com>
+
+description:
+  The RTC system controller in the NA51089 provides calendar timekeeping,
+  alarm and system power control functions through a shared register block.
+
+properties:
+  compatible:
+    const: novatek,na51089-rtcsys
+
+  reg:
+    maxItems: 1
+
+  interrupts:
+    maxItems: 1
+
+  resets:
+    maxItems: 1
+
+  reset-names: false
+
+  rtc:
+    type: object
+    $ref: /schemas/rtc/rtc.yaml#
+    unevaluatedProperties: false
+
+    properties:
+      compatible:
+        const: novatek,na51089-rtc
+
+      start-year: false
+
+      wakeup-source: true
+
+    required:
+      - compatible
+
+  power-controller:
+    type: object
+    additionalProperties: false
+
+    properties:
+      compatible:
+        const: novatek,na51089-pwbc
+
+      system-power-controller:
+        type: boolean
+        description:
+          Indicates that the PWBC controls system power-off.
+
+    required:
+      - compatible
+
+required:
+  - compatible
+  - reg
+  - interrupts
+  - resets
+  - rtc
+
+additionalProperties: false
+
+examples:
+  - |
+    #include <dt-bindings/interrupt-controller/arm-gic.h>
+    #include <dt-bindings/interrupt-controller/irq.h>
+    #include <dt-bindings/reset/novatek,na51089-reset.h>
+
+    rtc@f0060000 {
+        compatible = "novatek,na51089-rtcsys";
+        reg = <0xf0060000 0x100>;
+        interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
+        resets = <&cgu NA51089_RESET_RTC>;
+
+        rtc {
+            compatible = "novatek,na51089-rtc";
+            wakeup-source;
+        };
+
+        power-controller {
+            compatible = "novatek,na51089-pwbc";
+            system-power-controller;
+        };
+    };
+
+...
