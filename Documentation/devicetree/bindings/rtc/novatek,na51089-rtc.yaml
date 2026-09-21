@@ -1,0 +1,24 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/rtc/novatek,na51089-rtc.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Novatek NA51089 RTC
+
+maintainers:
+  - Yu-Tung Chang <mtwget@gmail.com>
+
+allOf:
+  - $ref: rtc.yaml#
+
+properties:
+  compatible:
+    const: novatek,na51089-rtc
+
+  wakeup-source: true
+
+required:
+  - compatible
+
+unevaluatedProperties: false
