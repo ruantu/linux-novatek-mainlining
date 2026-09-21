@@ -133,6 +133,12 @@
 				compatible = "novatek,na51089-rtc";
 				wakeup-source;
 			};
+
+			pwbc: power-controller {
+				compatible = "novatek,na51089-pwbc";
+				system-power-controller;
+				status = "disabled";
+			};
 		};
 
 		gpio: gpio@f0070000 {
