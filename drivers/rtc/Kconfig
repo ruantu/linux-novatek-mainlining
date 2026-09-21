@@ -1504,6 +1504,18 @@ config RTC_DRV_MESON_VRTC
 	  This driver can also be built as a module. If so, the module
 	  will be called rtc-meson-vrtc.
 
+config RTC_DRV_NOVATEK
+	tristate "Novatek RTC"
+	depends on MFD_NOVATEK_RTCSYS
+	help
+	  Say yes here to enable support for the battery-backed real-time
+	  clock in Novatek RTC system controllers such as the NA51089. The
+	  driver also programs the power alarm so an RTC alarm can turn the
+	  system back on after it has been powered off.
+
+	  This driver can also be built as a module. If so, the module
+	  will be called rtc-novatek.
+
 config RTC_DRV_OMAP
 	tristate "TI OMAP Real Time Clock"
 	depends on ARCH_OMAP || ARCH_DAVINCI || COMPILE_TEST
