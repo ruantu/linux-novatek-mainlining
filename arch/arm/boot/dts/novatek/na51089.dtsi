@@ -73,6 +73,25 @@
 			resets = <&cgu NA51089_RESET_WDT>;
 		};
 
+		rtcsys: rtc@f0060000 {
+			compatible = "novatek,na51089-rtcsys";
+			reg = <0xf0060000 0x100>;
+			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_RTC>;
+			status = "disabled";
+
+			rtc: rtc {
+				compatible = "novatek,na51089-rtc";
+				wakeup-source;
+			};
+
+			pwbc: power-controller {
+				compatible = "novatek,na51089-pwbc";
+				system-power-controller;
+				status = "disabled";
+			};
+		};
+
 		gpio: gpio@f0070000 {
 			compatible = "novatek,na51089-gpio";
 			reg = <0xf0070000 0x100>;
