@@ -128,6 +128,11 @@
 			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
 			resets = <&cgu NA51089_RESET_RTC>;
 			status = "disabled";
+
+			rtc: rtc {
+				compatible = "novatek,na51089-rtc";
+				wakeup-source;
+			};
 		};
 
 		gpio: gpio@f0070000 {
