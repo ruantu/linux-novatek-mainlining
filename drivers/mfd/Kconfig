@@ -1163,6 +1163,20 @@ config MFD_MENF21BMC
 	  This driver can also be built as a module. If so the module
 	  will be called menf21bmc.
 
+config MFD_NOVATEK_RTCSYS
+	tristate "Novatek RTC system controller"
+	depends on OF && HAS_IOMEM
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	select MFD_CORE
+	select REGMAP_IRQ
+	select REGMAP_MMIO
+	help
+	  Select this option to enable support for RTC system controllers
+	  found in Novatek SoCs such as the NA51089. It provides a shared
+	  register map and interrupt controller for the RTC and power control
+	  child devices. The individual functions are provided by separate
+	  child drivers.
+
 config MFD_NCT6694
 	tristate "Nuvoton NCT6694 support"
 	select MFD_CORE
