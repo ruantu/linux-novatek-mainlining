@@ -1516,6 +1516,20 @@ config RTC_DRV_NOVATEK
 	  This driver can also be built as a module. If so, the module
 	  will be called rtc-novatek.
 
+config RTC_DRV_NOVATEK_DRTC
+	tristate "Novatek digital RTC"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on OF && HAS_IOMEM
+	depends on COMMON_CLK
+	help
+	  Say yes here to enable support for the digital real-time clock in
+	  Novatek SoCs such as the NA51089. The driver supports calendar
+	  timekeeping, one-shot alarms, and waking the system from suspend
+	  through the DRTC interrupt.
+
+	  This driver can also be built as a module. If so, the module
+	  will be called rtc-novatek-drtc.
+
 config RTC_DRV_OMAP
 	tristate "TI OMAP Real Time Clock"
 	depends on ARCH_OMAP || ARCH_DAVINCI || COMPILE_TEST

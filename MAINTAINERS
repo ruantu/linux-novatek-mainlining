@@ -3265,6 +3265,7 @@ F:	drivers/mfd/novatek-rtcsys.c
 F:	drivers/mmc/host/mmc-novatek.c
 F:	drivers/pinctrl/novatek/pinctrl-na51089.c
 F:	drivers/power/reset/novatek-pwbc.c
+F:	drivers/rtc/rtc-novatek-drtc.c
 F:	drivers/rtc/rtc-novatek.c
 F:	drivers/spi/spi-novatek-fspi.c
 F:	drivers/spi/spi-novatek.c
