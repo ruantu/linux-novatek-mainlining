@@ -66,6 +66,14 @@
 			#reset-cells = <1>;
 		};
 
+		timer: timer@f0040000 {
+			compatible = "novatek,na51089-timer";
+			reg = <0xf0040000 0x240>;
+			clocks = <&cgu NA51089_CLK_TIMER>;
+			interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_TIMER>;
+		};
+
 		watchdog: watchdog@f0050000 {
 			compatible = "novatek,na51089-wdt";
 			reg = <0xf0050000 0x1000>;
