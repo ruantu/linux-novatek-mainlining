@@ -782,6 +782,18 @@ config NXP_STM_TIMER
           Enables the support for NXP System Timer Module found in the
           s32g NXP platform series.
 
+config NOVATEK_TIMER
+	bool "Novatek NA51089 timer driver"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on COMMON_CLK && GENERIC_CLOCKEVENTS && HAS_IOMEM && OF
+	select RESET_CONTROLLER
+	default MACH_NA51089
+	help
+	  Enable the 32-bit timer controller on the Novatek NA51089 SoC.
+	  Two channels provide a clocksource and periodic or one-shot clock
+	  events alongside the ARM global timer. An early timer is still
+	  required to bootstrap kernel timekeeping.
+
 config RTK_SYSTIMER
 	bool "Realtek SYSTIMER support"
 	depends on ARM || ARM64
