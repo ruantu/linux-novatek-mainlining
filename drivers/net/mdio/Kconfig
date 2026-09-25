@@ -288,5 +288,16 @@ config MDIO_BUS_MUX_MMIOREG
 
 	  Currently, only 8/16/32 bits registers are supported.
 
+config MDIO_BUS_MUX_NOVATEK
+	tristate "Novatek NA51089 MDIO bus multiplexer"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on OF_MDIO && HAS_IOMEM && RESET_CONTROLLER
+	select MDIO_BUS_MUX
+	select REGMAP_MMIO
+	help
+	  Support the MDIO multiplexer connecting the NA51089 Ethernet MAC
+	  to its internal PHY or the external MDIO bus.
+	  The integrated PHY uses the generic Clause 22 PHY driver.
+	  If built as a module, the module will be called mdio-mux-novatek.
 
 endif
