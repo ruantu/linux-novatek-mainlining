@@ -130,6 +130,18 @@ config DWMAC_MESON
 	  the stmmac device driver. This driver is used for Meson6,
 	  Meson8, Meson8b and GXBB SoCs.
 
+config DWMAC_NOVATEK
+	tristate "Novatek DWMAC support"
+	depends on OF && COMMON_CLK && HAS_IOMEM
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	select MDIO_BUS_MUX
+	help
+	  Support for the Ethernet controller on Novatek NT9856x (NA51089)
+	  SoCs, including the integrated MDIO multiplexer and 10/100 PHY.
+
+	  If you have a controller with this interface, say Y or M here.
+	  If unsure, say N.
+
 config DWMAC_NUVOTON
 	tristate "Nuvoton MA35 dwmac support"
 	default ARCH_MA35

@@ -3269,6 +3269,7 @@ F:	drivers/cpufreq/novatek-cpufreq.c
 F:	drivers/gpio/gpio-novatek.c
 F:	drivers/mfd/novatek-rtcsys.c
 F:	drivers/mmc/host/novatek-mmc.c
+F:	drivers/net/ethernet/stmicro/stmmac/dwmac-novatek.c
 F:	drivers/pinctrl/novatek/pinctrl-novatek-na51089.c
 F:	drivers/pmdomain/novatek/
 F:	drivers/power/reset/novatek-pwbc.c
