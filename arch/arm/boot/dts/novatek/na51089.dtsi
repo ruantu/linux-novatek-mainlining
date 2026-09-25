@@ -13,6 +13,7 @@
 	interrupt-parent = <&gic>;
 
 	aliases {
+		ethernet0 = &ethernet;
 		mmc0 = &mmc0;
 		mmc1 = &mmc1;
 		mmc2 = &mmc2;
@@ -149,6 +150,63 @@
 			reg-shift = <2>;
 			resets = <&cgu NA51089_RESET_UART0>;
 			status = "disabled";
+		};
+
+		ethernet: ethernet@f02b0000 {
+			compatible = "novatek,na51089-dwmac";
+			reg = <0xf02b0000 0x3000>;
+			reg-names = "mac";
+			interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-names = "macirq";
+			clocks = <&cgu NA51089_CLK_APB>,
+				 <&cgu NA51089_CLK_ETH>;
+			clock-names = "stmmaceth", "ethref";
+			resets = <&cgu NA51089_RESET_ETH>;
+			reset-names = "stmmaceth";
+			regmap = <&sramctrl>;
+			phy-mode = "mii";
+			phy-handle = <&internal_phy>;
+			max-speed = <100>;
+			snps,pbl = <16>;
+			snps,no-pbl-x8;
+			snps,force_sf_dma_mode;
+			status = "disabled";
+
+			mdio0: mdio {
+				compatible = "snps,dwmac-mdio";
+				#address-cells = <1>;
+				#size-cells = <0>;
+			};
+		};
+
+		eth_phy_mux: mdio-mux@f02b3000 {
+			compatible = "novatek,na51089-mdio-mux";
+			reg = <0xf02b3000 0x18>,
+			      <0xf02b3800 0x400>;
+			reg-names = "mux", "phy";
+			resets = <&cgu NA51089_RESET_ETH_PHY>;
+			reset-names = "phy";
+			mdio-parent-bus = <&mdio0>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			status = "disabled";
+
+			internal_mdio: mdio@0 {
+				reg = <0>;
+				#address-cells = <1>;
+				#size-cells = <0>;
+
+				internal_phy: ethernet-phy@0 {
+					compatible = "ethernet-phy-ieee802.3-c22";
+					reg = <0>;
+				};
+			};
+
+			external_mdio: mdio@1 {
+				reg = <1>;
+				#address-cells = <1>;
+				#size-cells = <0>;
+			};
 		};
 
 		uart1: serial@f0300000 {
