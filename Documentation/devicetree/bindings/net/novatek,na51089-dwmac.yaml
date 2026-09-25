@@ -1,0 +1,124 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/net/novatek,na51089-dwmac.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Novatek NA51089 Ethernet MAC
+
+maintainers:
+  - Yu-Tung Chang <mtwget@gmail.com>
+
+description:
+  The NA51089 integrates a Synopsys DesignWare Ethernet QoS MAC with a
+  10/100 Ethernet PHY connected through MII and an external RMII interface.
+  The MAC core registers are separate from the PHY selection, RMII interface
+  control and PHY analog registers owned by the MDIO multiplexer. The APB
+  clock drives the MDIO divider, while the Ethernet reference clock supplies
+  the MAC.
+
+allOf:
+  - $ref: snps,dwmac.yaml#
+  - if:
+      properties:
+        phy-mode:
+          const: mii
+    then:
+      properties:
+        novatek,rmii-refclk-out: false
+
+properties:
+  compatible:
+    const: novatek,na51089-dwmac
+
+  reg:
+    maxItems: 1
+    description: MAC core registers
+
+  reg-names:
+    const: mac
+
+  interrupts:
+    maxItems: 1
+
+  interrupt-names:
+    const: macirq
+
+  clocks:
+    items:
+      - description: APB register interface and MDIO divider clock
+      - description: Ethernet reference clock
+
+  clock-names:
+    items:
+      - const: stmmaceth
+      - const: ethref
+
+  resets:
+    maxItems: 1
+
+  reset-names:
+    const: stmmaceth
+
+  phy-mode:
+    enum: [mii, rmii]
+
+  phy-handle: true
+
+  max-speed:
+    const: 100
+
+  regmap:
+    $ref: /schemas/types.yaml#/definitions/phandle
+    description: Phandle to the NA51089 SRAM controller.
+
+  novatek,rmii-refclk-out:
+    type: boolean
+    description:
+      Drive the 50 MHz RMII reference clock from the SoC to the external
+      PHY. When absent, the reference clock is supplied externally to the
+      MAC. This property only applies to the RMII interface.
+
+required:
+  - compatible
+  - reg
+  - reg-names
+  - interrupts
+  - interrupt-names
+  - clocks
+  - clock-names
+  - resets
+  - reset-names
+  - phy-mode
+  - phy-handle
+  - regmap
+
+unevaluatedProperties: false
+
+examples:
+  - |
+    #include <dt-bindings/clock/novatek,na51089-clock.h>
+    #include <dt-bindings/interrupt-controller/arm-gic.h>
+    #include <dt-bindings/reset/novatek,na51089-reset.h>
+
+    ethernet@f02b0000 {
+        compatible = "novatek,na51089-dwmac";
+        reg = <0xf02b0000 0x3000>;
+        reg-names = "mac";
+        interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
+        interrupt-names = "macirq";
+        clocks = <&cgu NA51089_CLK_APB>, <&cgu NA51089_CLK_ETH>;
+        clock-names = "stmmaceth", "ethref";
+        resets = <&cgu NA51089_RESET_ETH>;
+        reset-names = "stmmaceth";
+        regmap = <&sramctrl>;
+        phy-mode = "mii";
+        phy-handle = <&internal_phy>;
+        max-speed = <100>;
+
+        mdio0: mdio {
+            compatible = "snps,dwmac-mdio";
+            #address-cells = <1>;
+            #size-cells = <0>;
+        };
+    };

@@ -3250,6 +3250,7 @@ F:	Documentation/devicetree/bindings/clock/novatek,na51089-cgu.yaml
 F:	Documentation/devicetree/bindings/gpio/novatek,na51089-gpio.yaml
 F:	Documentation/devicetree/bindings/mfd/novatek,na51089-rtcsys.yaml
 F:	Documentation/devicetree/bindings/mmc/novatek,na51089-mmc.yaml
+F:	Documentation/devicetree/bindings/net/novatek,na51089-dwmac.yaml
 F:	Documentation/devicetree/bindings/pinctrl/novatek,na51089-pinctrl.yaml
 F:	Documentation/devicetree/bindings/rtc/novatek,na51089-drtc.yaml
 F:	Documentation/devicetree/bindings/serial/novatek,na51089-uart.yaml
