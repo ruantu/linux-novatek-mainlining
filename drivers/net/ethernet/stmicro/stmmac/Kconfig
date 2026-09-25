@@ -130,6 +130,16 @@ config DWMAC_MESON
 	  the stmmac device driver. This driver is used for Meson6,
 	  Meson8, Meson8b and GXBB SoCs.
 
+config DWMAC_NOVATEK
+	tristate "Novatek NA51089 DWMAC support"
+	depends on OF && (ARCH_NOVATEK || COMPILE_TEST)
+	select MFD_SYSCON
+	help
+	  Support the NA51089 Ethernet MAC with its integrated 10/100 PHY
+	  using the Synopsys DesignWare Ethernet QoS driver.
+	  This manages the platform clocks, reset and Ethernet SRAM.
+	  If built as a module, the module will be called dwmac-novatek.
+
 config DWMAC_NUVOTON
 	tristate "Nuvoton MA35 dwmac support"
 	default ARCH_MA35

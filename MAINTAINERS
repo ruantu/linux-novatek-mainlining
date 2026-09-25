@@ -3267,6 +3267,7 @@ F:	drivers/clocksource/timer-novatek.c
 F:	drivers/gpio/gpio-novatek.c
 F:	drivers/mfd/novatek-rtcsys.c
 F:	drivers/mmc/host/mmc-novatek.c
+F:	drivers/net/ethernet/stmicro/stmmac/dwmac-novatek.c
 F:	drivers/pinctrl/novatek/pinctrl-na51089.c
 F:	drivers/power/reset/novatek-pwbc.c
 F:	drivers/rtc/rtc-novatek-drtc.c
