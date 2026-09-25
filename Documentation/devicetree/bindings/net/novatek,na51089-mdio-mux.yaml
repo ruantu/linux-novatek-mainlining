@@ -1,0 +1,155 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/net/novatek,na51089-mdio-mux.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Novatek NA51089 MDIO bus multiplexer
+
+maintainers:
+  - Yu-Tung Chang <mtwget@gmail.com>
+
+description:
+  The NA51089 MDIO multiplexer connects the Ethernet MAC's MDIO controller
+  to either the internal 10/100 PHY or external PHYs. Child bus 0 selects
+  the internal PHY and child bus 1 selects the external MDIO interface,
+  matching the hardware PHY selection field values. The multiplexer also
+  sets the internal PHY's MDIO address to zero when selecting bus 0.
+  The RMII interface control registers belong to this block. The interface
+  mode and reference clock direction are described by phy-mode and
+  novatek,rmii-refclk-out on the MAC associated with mdio-parent-bus.
+  The internal PHY analog power, reset and tuning registers belong to
+  this block.
+  An optional 25 MHz reference clock supplies an external PHY which
+  returns the 50 MHz RMII reference clock to the MAC.
+
+allOf:
+  - $ref: mdio-mux.yaml#
+
+properties:
+  compatible:
+    const: novatek,na51089-mdio-mux
+
+  reg:
+    items:
+      - description: Ethernet debug, PHY selection and RMII control registers
+      - description: Internal PHY analog registers
+
+  reg-names:
+    items:
+      - const: mux
+      - const: phy
+
+  clocks:
+    maxItems: 1
+    description: Optional 25 MHz reference clock supplied to the external PHY.
+
+  clock-names:
+    const: phy-ref
+
+  resets:
+    maxItems: 1
+
+  reset-names:
+    const: phy
+
+  mdio-parent-bus: true
+
+  '#address-cells':
+    const: 1
+
+  '#size-cells':
+    const: 0
+
+patternProperties:
+  '^mdio@[0-9a-f]+$':
+    type: object
+
+    properties:
+      $nodename:
+        pattern: '^mdio@[01]$'
+
+      reg:
+        enum: [0, 1]
+
+    required:
+      - reg
+      - '#address-cells'
+      - '#size-cells'
+
+required:
+  - compatible
+  - reg
+  - reg-names
+  - resets
+  - reset-names
+  - mdio-parent-bus
+  - '#address-cells'
+  - '#size-cells'
+
+dependencies:
+  clocks: [clock-names]
+  clock-names: [clocks]
+
+unevaluatedProperties: false
+
+examples:
+  - |
+    #include <dt-bindings/reset/novatek,na51089-reset.h>
+
+    eth_phy_mux: mdio-mux@f02b3000 {
+        compatible = "novatek,na51089-mdio-mux";
+        reg = <0xf02b3000 0x18>, <0xf02b3800 0x400>;
+        reg-names = "mux", "phy";
+        resets = <&cgu NA51089_RESET_ETH_PHY>;
+        reset-names = "phy";
+        mdio-parent-bus = <&mdio0>;
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        internal_mdio: mdio@0 {
+            reg = <0>;
+            #address-cells = <1>;
+            #size-cells = <0>;
+
+            internal_phy: ethernet-phy@0 {
+                compatible = "ethernet-phy-ieee802.3-c22";
+                reg = <0>;
+            };
+        };
+
+        external_mdio: mdio@1 {
+            reg = <1>;
+            #address-cells = <1>;
+            #size-cells = <0>;
+        };
+    };
+
+  - |
+    #include <dt-bindings/clock/novatek,na51089-clock.h>
+    #include <dt-bindings/reset/novatek,na51089-reset.h>
+
+    mdio-mux@f02b3000 {
+        compatible = "novatek,na51089-mdio-mux";
+        reg = <0xf02b3000 0x18>, <0xf02b3800 0x400>;
+        reg-names = "mux", "phy";
+        clocks = <&cgu NA51089_CLK_ETH_EXT_PHY>;
+        clock-names = "phy-ref";
+        resets = <&cgu NA51089_RESET_ETH_PHY>;
+        reset-names = "phy";
+        mdio-parent-bus = <&mdio0>;
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        mdio@1 {
+            reg = <1>;
+            #address-cells = <1>;
+            #size-cells = <0>;
+
+            ethernet-phy@1 {
+                reg = <1>;
+            };
+        };
+    };
+
+...
