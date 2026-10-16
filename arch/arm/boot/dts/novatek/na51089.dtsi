@@ -15,6 +15,9 @@
 
 	aliases {
 		ethernet0 = &ethernet;
+		i2c0 = &i2c0;
+		i2c1 = &i2c1;
+		i2c2 = &i2c2;
 		mmc0 = &mmc0;
 		mmc1 = &mmc1;
 		mmc2 = &mmc2;
@@ -215,6 +218,17 @@
 			};
 		};
 
+		i2c0: i2c@f0220000 {
+			compatible = "novatek,na51089-i2c";
+			reg = <0xf0220000 0x40>;
+			clocks = <&cgu NA51089_CLK_I2C0>;
+			interrupts = <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_I2C0>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			status = "disabled";
+		};
+
 		spi0: spi@f0230000 {
 			compatible = "novatek,na51089-spi";
 			reg = <0xf0230000 0x10000>;
@@ -333,6 +347,28 @@
 			clocks = <&cgu NA51089_CLK_SPI2>;
 			interrupts = <GIC_SPI 37 IRQ_TYPE_LEVEL_HIGH>;
 			resets = <&cgu NA51089_RESET_SPI2>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			status = "disabled";
+		};
+
+		i2c1: i2c@f0350000 {
+			compatible = "novatek,na51089-i2c";
+			reg = <0xf0350000 0x40>;
+			clocks = <&cgu NA51089_CLK_I2C1>;
+			interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_I2C1>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+			status = "disabled";
+		};
+
+		i2c2: i2c@f03a0000 {
+			compatible = "novatek,na51089-i2c";
+			reg = <0xf03a0000 0x40>;
+			clocks = <&cgu NA51089_CLK_I2C2>;
+			interrupts = <GIC_SPI 60 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_I2C2>;
 			#address-cells = <1>;
 			#size-cells = <0>;
 			status = "disabled";
