@@ -953,6 +953,18 @@ config I2C_NOMADIK
 	  I2C interface from ST-Ericsson's Nomadik and Ux500 architectures,
 	  as well as the STA2X11 PCIe I/O HUB.
 
+config I2C_NOVATEK
+	tristate "Novatek I2C controller"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on OF && COMMON_CLK
+	select RESET_CONTROLLER
+	help
+	  This driver supports the I2C controllers on Novatek
+	  NT9856x (NA51089) SoCs.
+
+	  This driver can also be built as a module. If so, the module
+	  will be called i2c-novatek.
+
 config I2C_NPCM
 	tristate "Nuvoton I2C Controller"
 	depends on ARCH_NPCM || COMPILE_TEST
