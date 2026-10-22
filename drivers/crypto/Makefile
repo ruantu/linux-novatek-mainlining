@@ -20,6 +20,7 @@ obj-$(CONFIG_CRYPTO_DEV_MXS_DCP) += mxs-dcp.o
 obj-$(CONFIG_CRYPTO_DEV_NX) += nx/
 obj-$(CONFIG_CRYPTO_DEV_NOVATEK) += novatek-crypto.o
 obj-$(CONFIG_CRYPTO_DEV_NOVATEK_HASH) += novatek-hash.o
+obj-$(CONFIG_CRYPTO_DEV_NOVATEK_RSA) += novatek-rsa.o
 obj-$(CONFIG_CRYPTO_DEV_OMAP) += omap-crypto.o
 obj-$(CONFIG_CRYPTO_DEV_OMAP_AES) += omap-aes-driver.o
 omap-aes-driver-objs := omap-aes.o omap-aes-gcm.o
