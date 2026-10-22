@@ -855,4 +855,15 @@ config CRYPTO_DEV_NOVATEK
 	  This driver supports AES, DES and Triple DES acceleration on
 	  Novatek NT9856x (NA51089) SoCs.
 
+config CRYPTO_DEV_NOVATEK_HASH
+	tristate "Novatek hash accelerator"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on OF && HAS_IOMEM
+	select CRYPTO_ENGINE
+	select CRYPTO_SHA1
+	select CRYPTO_SHA256
+	help
+	  This driver supports SHA-1, SHA-256 and HMAC acceleration on
+	  Novatek NT9856x (NA51089) SoCs.
+
 endif # CRYPTO_HW
