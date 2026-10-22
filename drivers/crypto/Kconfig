@@ -839,4 +839,20 @@ source "drivers/crypto/starfive/Kconfig"
 source "drivers/crypto/inside-secure/eip93/Kconfig"
 source "drivers/crypto/ti/Kconfig"
 
+config CRYPTO_DEV_NOVATEK
+	tristate "Novatek cryptographic accelerator"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on OF && HAS_IOMEM
+	select CRYPTO_AES
+	select CRYPTO_CBC
+	select CRYPTO_CCM
+	select CRYPTO_CTR
+	select CRYPTO_ECB
+	select CRYPTO_ENGINE
+	select CRYPTO_GCM
+	select CRYPTO_LIB_DES
+	help
+	  This driver supports AES, DES and Triple DES acceleration on
+	  Novatek NT9856x (NA51089) SoCs.
+
 endif # CRYPTO_HW

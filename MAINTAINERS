@@ -3272,6 +3272,7 @@ F:	drivers/clk/novatek/clk-novatek-na51089.c
 F:	drivers/clocksource/timer-novatek.c
 F:	drivers/counter/novatek-ccnt.c
 F:	drivers/cpufreq/novatek-cpufreq.c
+F:	drivers/crypto/novatek-crypto.c
 F:	drivers/gpio/gpio-novatek.c
 F:	drivers/i2c/busses/i2c-novatek.c
 F:	drivers/mfd/novatek-pwmss.c
