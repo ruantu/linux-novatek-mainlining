@@ -423,6 +423,15 @@
 			status = "disabled";
 		};
 
+		crypto: crypto@f0620000 {
+			compatible = "novatek,na51089-crypto";
+			reg = <0xf0620000 0x100>;
+			clocks = <&cgu NA51089_CLK_CRYPTO>;
+			interrupts = <GIC_SPI 38 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_CRYPTO>;
+			status = "disabled";
+		};
+
 		timer@ffd00200 {
 			compatible = "arm,cortex-a9-global-timer";
 			reg = <0xffd00200 0x20>;
