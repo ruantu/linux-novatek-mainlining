@@ -441,6 +441,16 @@
 			status = "disabled";
 		};
 
+		rsa: crypto@f06a0000 {
+			compatible = "novatek,na51089-rsa";
+			reg = <0xf06a0000 0x100>;
+			clocks = <&cgu NA51089_CLK_RSA>;
+			interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_RSA>;
+			power-domains = <&sramctrl NA51089_SRAM_SW_RSA>;
+			status = "disabled";
+		};
+
 		timer@ffd00200 {
 			compatible = "arm,cortex-a9-global-timer";
 			reg = <0xffd00200 0x20>;
