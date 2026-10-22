@@ -432,6 +432,15 @@
 			status = "disabled";
 		};
 
+		hash: crypto@f0670000 {
+			compatible = "novatek,na51089-hash";
+			reg = <0xf0670000 0x100>;
+			clocks = <&cgu NA51089_CLK_HASH>;
+			interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_HASH>;
+			status = "disabled";
+		};
+
 		timer@ffd00200 {
 			compatible = "arm,cortex-a9-global-timer";
 			reg = <0xffd00200 0x20>;
