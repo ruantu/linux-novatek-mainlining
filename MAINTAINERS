@@ -3249,6 +3249,7 @@ S:	Maintained
 F:	Documentation/devicetree/bindings/clock/novatek,na51089-cgu.yaml
 F:	Documentation/devicetree/bindings/counter/novatek,na51089-ccnt.yaml
 F:	Documentation/devicetree/bindings/crypto/novatek,na51089-crypto.yaml
+F:	Documentation/devicetree/bindings/crypto/novatek,na51089-hash.yaml
 F:	Documentation/devicetree/bindings/gpio/novatek,na51089-gpio.yaml
 F:	Documentation/devicetree/bindings/i2c/novatek,na51089-i2c.yaml
 F:	Documentation/devicetree/bindings/mfd/novatek,na51089-pwmss.yaml
