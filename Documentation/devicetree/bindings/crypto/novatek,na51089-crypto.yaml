@@ -1,0 +1,53 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/crypto/novatek,na51089-crypto.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Novatek NA51089 symmetric cryptographic accelerator
+
+maintainers:
+  - Yu-Tung Chang <mtwget@gmail.com>
+
+properties:
+  compatible:
+    const: novatek,na51089-crypto
+
+  reg:
+    maxItems: 1
+
+  interrupts:
+    maxItems: 1
+
+  clocks:
+    maxItems: 1
+
+  resets:
+    maxItems: 1
+
+  novatek,no-dma:
+    type: boolean
+    description: Disable internal DMA and use PIO only.
+
+required:
+  - compatible
+  - reg
+  - interrupts
+  - clocks
+  - resets
+
+additionalProperties: false
+
+examples:
+  - |
+    #include <dt-bindings/clock/novatek,na51089-clock.h>
+    #include <dt-bindings/interrupt-controller/arm-gic.h>
+    #include <dt-bindings/reset/novatek,na51089-reset.h>
+
+    crypto@f0620000 {
+        compatible = "novatek,na51089-crypto";
+        reg = <0xf0620000 0x100>;
+        interrupts = <GIC_SPI 38 IRQ_TYPE_LEVEL_HIGH>;
+        clocks = <&cgu NA51089_CLK_CRYPTO>;
+        resets = <&cgu NA51089_RESET_CRYPTO>;
+    };
