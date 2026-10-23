@@ -3286,6 +3286,7 @@ F:	drivers/mfd/novatek-pwmss.c
 F:	drivers/mfd/novatek-rtcsys.c
 F:	drivers/mmc/host/novatek-mmc.c
 F:	drivers/net/ethernet/stmicro/stmmac/dwmac-novatek.c
+F:	drivers/nvmem/novatek-otp.c
 F:	drivers/pinctrl/novatek/pinctrl-novatek-na51089.c
 F:	drivers/pmdomain/novatek/
 F:	drivers/power/reset/novatek-pwbc.c

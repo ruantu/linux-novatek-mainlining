@@ -251,6 +251,17 @@ config NVMEM_NINTENDO_OTP
 	  This driver can also be built as a module. If so, the module
 	  will be called nvmem-nintendo-otp.
 
+config NVMEM_NOVATEK_OTP
+	tristate "Novatek NT9856x OTP support"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on HAS_IOMEM
+	help
+	  Say Y here to enable read-only access to calibration and identification
+	  data in the OTP memory of Novatek NT9856x (NA51089) SoCs.
+
+	  This driver can also be built as a module. If so, the module
+	  will be called novatek-otp.
+
 config NVMEM_S32G_OCOTP
 	tristate "S32G SoC OCOTP support"
 	depends on ARCH_S32
