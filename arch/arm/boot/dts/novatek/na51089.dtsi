@@ -432,6 +432,16 @@
 			status = "disabled";
 		};
 
+		otp: efuse@f0660000 {
+			compatible = "novatek,na51089-otp";
+			reg = <0xf0660000 0x34>;
+			clocks = <&cgu NA51089_CLK_EFUSE>,
+				 <&cgu NA51089_CLK_APB>;
+			clock-names = "otp", "apb";
+			resets = <&cgu NA51089_RESET_EFUSE>;
+			status = "disabled";
+		};
+
 		hash: crypto@f0670000 {
 			compatible = "novatek,na51089-hash";
 			reg = <0xf0670000 0x100>;
