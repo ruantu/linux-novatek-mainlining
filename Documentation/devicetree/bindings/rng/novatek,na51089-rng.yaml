@@ -1,0 +1,52 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/rng/novatek,na51089-rng.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Novatek NA51089 True Random Number Generator
+
+maintainers:
+  - Yu-Tung Chang <mtwget@gmail.com>
+
+properties:
+  compatible:
+    const: novatek,na51089-rng
+
+  reg:
+    maxItems: 1
+
+  clocks:
+    items:
+      - description: Core clock
+      - description: Ring oscillator clock
+
+  clock-names:
+    items:
+      - const: core
+      - const: ro
+
+  resets:
+    maxItems: 1
+
+required:
+  - compatible
+  - reg
+  - clocks
+  - clock-names
+  - resets
+
+additionalProperties: false
+
+examples:
+  - |
+    #include <dt-bindings/clock/novatek,na51089-clock.h>
+    #include <dt-bindings/reset/novatek,na51089-reset.h>
+
+    rng@f0680000 {
+        compatible = "novatek,na51089-rng";
+        reg = <0xf0680000 0x10>;
+        clocks = <&cgu NA51089_CLK_TRNG>, <&cgu NA51089_CLK_TRNG_RO>;
+        clock-names = "core", "ro";
+        resets = <&cgu NA51089_RESET_TRNG>;
+    };
