@@ -3271,6 +3271,7 @@ F:	Documentation/devicetree/bindings/timer/novatek,na51089-timer.yaml
 F:	Documentation/devicetree/bindings/watchdog/novatek,na51089-wdt.yaml
 F:	arch/arm/boot/dts/novatek/na51089-pinctrl.dtsi
 F:	arch/arm/boot/dts/novatek/na51089.dtsi
+F:	drivers/char/hw_random/novatek-rng.c
 F:	drivers/clk/novatek/clk-novatek-na51089.c
 F:	drivers/clocksource/timer-novatek.c
 F:	drivers/counter/novatek-ccnt.c

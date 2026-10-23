@@ -460,6 +460,17 @@ config HW_RANDOM_MESON
 
 	  If unsure, say Y.
 
+config HW_RANDOM_NOVATEK
+	tristate "Novatek True Random Number Generator support"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on HAS_IOMEM && OF
+	help
+	  This driver supports the true random number generator found on
+	  Novatek NT9856x (NA51089) SoCs.
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called novatek-rng.
+
 config HW_RANDOM_CAVIUM
 	tristate "Cavium ThunderX Random Number Generator support"
 	depends on PCI
