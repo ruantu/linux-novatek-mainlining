@@ -441,6 +441,16 @@
 			status = "disabled";
 		};
 
+		rng: rng@f0680000 {
+			compatible = "novatek,na51089-rng";
+			reg = <0xf0680000 0x10>;
+			clocks = <&cgu NA51089_CLK_TRNG>,
+				 <&cgu NA51089_CLK_TRNG_RO>;
+			clock-names = "core", "ro";
+			resets = <&cgu NA51089_RESET_TRNG>;
+			status = "disabled";
+		};
+
 		rsa: crypto@f06a0000 {
 			compatible = "novatek,na51089-rsa";
 			reg = <0xf06a0000 0x100>;
