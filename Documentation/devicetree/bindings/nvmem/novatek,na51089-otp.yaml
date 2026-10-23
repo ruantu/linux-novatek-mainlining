@@ -1,0 +1,55 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/nvmem/novatek,na51089-otp.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Novatek NA51089 OTP controller
+
+maintainers:
+  - Yu-Tung Chang <mtwget@gmail.com>
+
+allOf:
+  - $ref: nvmem.yaml#
+
+properties:
+  compatible:
+    const: novatek,na51089-otp
+
+  reg:
+    maxItems: 1
+
+  clocks:
+    items:
+      - description: OTP controller gate clock
+      - description: APB clock used for OTP access timing
+
+  clock-names:
+    items:
+      - const: otp
+      - const: apb
+
+  resets:
+    maxItems: 1
+
+required:
+  - compatible
+  - reg
+  - clocks
+  - clock-names
+  - resets
+
+unevaluatedProperties: false
+
+examples:
+  - |
+    #include <dt-bindings/clock/novatek,na51089-clock.h>
+    #include <dt-bindings/reset/novatek,na51089-reset.h>
+
+    efuse@f0660000 {
+        compatible = "novatek,na51089-otp";
+        reg = <0xf0660000 0x34>;
+        clocks = <&cgu NA51089_CLK_EFUSE>, <&cgu NA51089_CLK_APB>;
+        clock-names = "otp", "apb";
+        resets = <&cgu NA51089_RESET_EFUSE>;
+    };
