@@ -90,6 +90,16 @@ config MICROCHIP_TCB_CAPTURE
 	  To compile this driver as a module, choose M here: the
 	  module will be called microchip-tcb-capture.
 
+config NOVATEK_CCNT
+	tristate "Novatek cycle counter"
+	depends on MFD_NOVATEK_PWMSS
+	help
+	  Enable support for GPIO pulse counting on Novatek NT9856x (NA51089)
+	  cycle counters.
+
+	  To compile this driver as a module, choose M here: the module will
+	  be called novatek-ccnt.
+
 config RZ_MTU3_CNT
 	tristate "Renesas RZ/G2L MTU3a counter driver"
 	depends on RZ_MTU3
