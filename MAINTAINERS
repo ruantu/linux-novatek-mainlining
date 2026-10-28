@@ -3254,6 +3254,7 @@ F:	Documentation/devicetree/bindings/net/novatek,na51089-dwmac.yaml
 F:	Documentation/devicetree/bindings/pinctrl/novatek,na51089-pinctrl.yaml
 F:	Documentation/devicetree/bindings/power/novatek,na51089-sramctrl.yaml
 F:	Documentation/devicetree/bindings/power/reset/novatek,na51089-pwbc.yaml
+F:	Documentation/devicetree/bindings/pwm/novatek,na51089-pwm.yaml
 F:	Documentation/devicetree/bindings/rtc/novatek,na51089-drtc.yaml
 F:	Documentation/devicetree/bindings/rtc/novatek,na51089-rtc.yaml
 F:	Documentation/devicetree/bindings/serial/novatek,na51089-uart.yaml
