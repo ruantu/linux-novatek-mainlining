@@ -204,6 +204,11 @@
 			interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
 			resets = <&cgu NA51089_RESET_PWM>;
 			status = "disabled";
+
+			pwm: pwm {
+				compatible = "novatek,na51089-pwm";
+				#pwm-cells = <3>;
+			};
 		};
 
 		spi0: spi@f0230000 {
