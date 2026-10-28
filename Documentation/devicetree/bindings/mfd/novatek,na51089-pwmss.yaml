@@ -1,0 +1,106 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/mfd/novatek,na51089-pwmss.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Novatek NA51089 PWM and counter controller
+
+maintainers:
+  - Yu-Tung Chang <mtwget@gmail.com>
+
+properties:
+  compatible:
+    const: novatek,na51089-pwmss
+
+  reg:
+    maxItems: 1
+
+  clocks:
+    description:
+      The twelve PWM output gate clocks are followed by the three input
+      cycle counter gate clocks.
+    minItems: 15
+    maxItems: 15
+
+  clock-names:
+    minItems: 15
+    items:
+      - const: pwm0
+      - const: pwm1
+      - const: pwm2
+      - const: pwm3
+      - const: pwm4
+      - const: pwm5
+      - const: pwm6
+      - const: pwm7
+      - const: pwm8
+      - const: pwm9
+      - const: pwm10
+      - const: pwm11
+      - const: ccnt0
+      - const: ccnt1
+      - const: ccnt2
+
+  interrupts:
+    maxItems: 1
+
+  resets:
+    maxItems: 1
+
+  pwm:
+    $ref: /schemas/pwm/novatek,na51089-pwm.yaml#
+
+  counter:
+    $ref: /schemas/counter/novatek,na51089-ccnt.yaml#
+
+required:
+  - compatible
+  - reg
+  - clocks
+  - clock-names
+  - interrupts
+  - resets
+
+additionalProperties: false
+
+examples:
+  - |
+    #include <dt-bindings/clock/novatek,na51089-clock.h>
+    #include <dt-bindings/interrupt-controller/arm-gic.h>
+    #include <dt-bindings/reset/novatek,na51089-reset.h>
+
+    pwmss@f0210000 {
+        compatible = "novatek,na51089-pwmss";
+        reg = <0xf0210000 0x400>;
+        clocks = <&cgu NA51089_CLK_PWM0>,
+                 <&cgu NA51089_CLK_PWM1>,
+                 <&cgu NA51089_CLK_PWM2>,
+                 <&cgu NA51089_CLK_PWM3>,
+                 <&cgu NA51089_CLK_PWM4>,
+                 <&cgu NA51089_CLK_PWM5>,
+                 <&cgu NA51089_CLK_PWM6>,
+                 <&cgu NA51089_CLK_PWM7>,
+                 <&cgu NA51089_CLK_PWM8>,
+                 <&cgu NA51089_CLK_PWM9>,
+                 <&cgu NA51089_CLK_PWM10>,
+                 <&cgu NA51089_CLK_PWM11>,
+                 <&cgu NA51089_CLK_PICNT0>,
+                 <&cgu NA51089_CLK_PICNT1>,
+                 <&cgu NA51089_CLK_PICNT2>;
+        clock-names = "pwm0", "pwm1", "pwm2", "pwm3",
+                      "pwm4", "pwm5", "pwm6", "pwm7",
+                      "pwm8", "pwm9", "pwm10", "pwm11",
+                      "ccnt0", "ccnt1", "ccnt2";
+        interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
+        resets = <&cgu NA51089_RESET_PWM>;
+
+        pwm {
+            compatible = "novatek,na51089-pwm";
+            #pwm-cells = <3>;
+        };
+
+        counter {
+            compatible = "novatek,na51089-ccnt";
+        };
+    };
