@@ -538,6 +538,16 @@ config PWM_MXS
 	  To compile this driver as a module, choose M here: the module
 	  will be called pwm-mxs.
 
+config PWM_NOVATEK
+	tristate "Novatek PWM support"
+	depends on MFD_NOVATEK_PWMSS
+	help
+	  Generic PWM framework driver for the PWM controller on Novatek
+	  NT9856x (NA51089) SoCs.
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called pwm-novatek.
+
 config PWM_NTXEC
 	tristate "Netronix embedded controller PWM support"
 	depends on MFD_NTXEC
