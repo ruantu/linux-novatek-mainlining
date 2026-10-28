@@ -209,6 +209,10 @@
 				compatible = "novatek,na51089-pwm";
 				#pwm-cells = <3>;
 			};
+
+			ccnt: counter {
+				compatible = "novatek,na51089-ccnt";
+			};
 		};
 
 		spi0: spi@f0230000 {
