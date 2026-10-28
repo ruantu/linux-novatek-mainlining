@@ -179,6 +179,33 @@
 			status = "disabled";
 		};
 
+		pwmss: pwmss@f0210000 {
+			compatible = "novatek,na51089-pwmss";
+			reg = <0xf0210000 0x400>;
+			clocks = <&cgu NA51089_CLK_PWM0>,
+				 <&cgu NA51089_CLK_PWM1>,
+				 <&cgu NA51089_CLK_PWM2>,
+				 <&cgu NA51089_CLK_PWM3>,
+				 <&cgu NA51089_CLK_PWM4>,
+				 <&cgu NA51089_CLK_PWM5>,
+				 <&cgu NA51089_CLK_PWM6>,
+				 <&cgu NA51089_CLK_PWM7>,
+				 <&cgu NA51089_CLK_PWM8>,
+				 <&cgu NA51089_CLK_PWM9>,
+				 <&cgu NA51089_CLK_PWM10>,
+				 <&cgu NA51089_CLK_PWM11>,
+				 <&cgu NA51089_CLK_PICNT0>,
+				 <&cgu NA51089_CLK_PICNT1>,
+				 <&cgu NA51089_CLK_PICNT2>;
+			clock-names = "pwm0", "pwm1", "pwm2", "pwm3",
+				      "pwm4", "pwm5", "pwm6", "pwm7",
+				      "pwm8", "pwm9", "pwm10", "pwm11",
+				      "ccnt0", "ccnt1", "ccnt2";
+			interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_PWM>;
+			status = "disabled";
+		};
+
 		spi0: spi@f0230000 {
 			compatible = "novatek,na51089-spi";
 			reg = <0xf0230000 0x10000>;
