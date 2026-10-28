@@ -1163,6 +1163,19 @@ config MFD_MENF21BMC
 	  This driver can also be built as a module. If so the module
 	  will be called menf21bmc.
 
+config MFD_NOVATEK_PWMSS
+	tristate "Novatek PWM and counter controller"
+	depends on OF && HAS_IOMEM && COMMON_CLK
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	select MFD_CORE
+	select REGMAP_IRQ
+	select REGMAP_MMIO
+	select RESET_CONTROLLER
+	help
+	  Enable the PWM and counter controller on Novatek NT9856x
+	  (NA51089) SoCs. This provides the common resources used by the
+	  PWM output and input counter drivers.
+
 config MFD_NOVATEK_RTCSYS
 	tristate "Novatek RTC system controller"
 	depends on OF && HAS_IOMEM

@@ -3270,6 +3270,7 @@ F:	drivers/clk/novatek/clk-novatek-na51089.c
 F:	drivers/clocksource/timer-novatek.c
 F:	drivers/cpufreq/novatek-cpufreq.c
 F:	drivers/gpio/gpio-novatek.c
+F:	drivers/mfd/novatek-pwmss.c
 F:	drivers/mfd/novatek-rtcsys.c
 F:	drivers/mmc/host/novatek-mmc.c
 F:	drivers/net/ethernet/stmicro/stmmac/dwmac-novatek.c
@@ -3286,6 +3287,7 @@ F:	include/dt-bindings/clock/novatek,na51089-clock.h
 F:	include/dt-bindings/gpio/novatek,na51089-gpio.h
 F:	include/dt-bindings/power/novatek,na51089-sramctrl.h
 F:	include/dt-bindings/reset/novatek,na51089-reset.h
+F:	include/linux/mfd/novatek-pwmss.h
 F:	include/linux/mfd/novatek-rtcsys.h
 
 ARM/NOVATEK SOC SUPPORT
