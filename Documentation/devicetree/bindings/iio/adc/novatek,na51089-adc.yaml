@@ -1,0 +1,104 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/iio/adc/novatek,na51089-adc.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Novatek NA51089 ADC and thermal sensor
+
+maintainers:
+  - Yu-Tung Chang <mtwget@gmail.com>
+
+properties:
+  compatible:
+    const: novatek,na51089-adc
+
+  reg:
+    maxItems: 1
+
+  clocks:
+    maxItems: 1
+
+  interrupts:
+    maxItems: 1
+
+  resets:
+    maxItems: 1
+
+  "#io-channel-cells":
+    description:
+      Channels 0 through 2 select voltage inputs. Channel 3 selects the
+      internal temperature sensor.
+    const: 1
+
+  "#address-cells":
+    const: 1
+
+  "#size-cells":
+    const: 0
+
+  nvmem-cells:
+    items:
+      - description: Temperature calibration word containing redundant trim data
+
+  nvmem-cell-names:
+    const: thermal-calibration
+
+patternProperties:
+  "^channel@[0-2]$":
+    $ref: adc.yaml
+    type: object
+    description:
+      A voltage input.
+
+    properties:
+      reg:
+        items:
+          minimum: 0
+          maximum: 2
+
+      bipolar: false
+      diff-channels: false
+      common-mode-channel: false
+
+    required:
+      - reg
+
+    unevaluatedProperties: false
+
+dependencies:
+  nvmem-cells: [ nvmem-cell-names ]
+  nvmem-cell-names: [ nvmem-cells ]
+
+required:
+  - compatible
+  - reg
+  - clocks
+  - interrupts
+  - resets
+  - "#io-channel-cells"
+
+additionalProperties: false
+
+examples:
+  - |
+    #include <dt-bindings/clock/novatek,na51089-clock.h>
+    #include <dt-bindings/interrupt-controller/arm-gic.h>
+    #include <dt-bindings/reset/novatek,na51089-reset.h>
+
+    adc@f0260000 {
+        compatible = "novatek,na51089-adc";
+        reg = <0xf0260000 0x84>;
+        clocks = <&cgu NA51089_CLK_ADC>;
+        interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
+        resets = <&cgu NA51089_RESET_ADC>;
+        nvmem-cells = <&thermal_calibration>;
+        nvmem-cell-names = "thermal-calibration";
+        #io-channel-cells = <1>;
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        channel@0 {
+            reg = <0>;
+        };
+    };
