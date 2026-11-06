@@ -1265,6 +1265,19 @@ config NCT7201
 	  This driver can also be built as a module. If so, the module
 	  will be called nct7201.
 
+config NOVATEK_ADC
+	tristate "Novatek ADC and temperature sensor"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on HAS_IOMEM && OF && NVMEM
+	select IIO_ADC_HELPER
+	help
+	  Say yes here to support the ADC and internal temperature sensor on
+	  Novatek NT9856x (NA51089) SoCs. This provides voltage and calibrated
+	  temperature readings through IIO.
+
+	  To compile this driver as a module, choose M here: the module will be
+	  called novatek-adc.
+
 config NPCM_ADC
 	tristate "Nuvoton NPCM ADC driver"
 	depends on ARCH_NPCM || COMPILE_TEST
