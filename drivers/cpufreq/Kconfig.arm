@@ -15,6 +15,18 @@ config ARM_ALLWINNER_SUN50I_CPUFREQ_NVMEM
 	  To compile this driver as a module, choose M here: the
 	  module will be called sun50i-cpufreq-nvmem.
 
+config ARM_NOVATEK_CPUFREQ
+	tristate "Novatek NT9856x CPUFreq support"
+	depends on MACH_NA51089 || COMPILE_TEST
+	depends on OF && COMMON_CLK
+	depends on CPUFREQ_DT
+	help
+	  This adds CPU frequency scaling support for Novatek NT9856x
+	  (NA51089) SoCs using operating points and the CPU clock controller.
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called novatek-cpufreq.
+
 config ARM_AIROHA_SOC_CPUFREQ
 	tristate "Airoha EN7581 SoC CPUFreq support"
 	depends on ARCH_AIROHA || COMPILE_TEST
