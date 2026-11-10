@@ -26,6 +26,10 @@
 			compatible = "arm,cortex-a9";
 			reg = <0>;
 			device_type = "cpu";
+			clocks = <&cgu NA51089_CLK_CPU>,
+				 <&cgu NA51089_CLK_PLL8>,
+				 <&cgu NA51089_CLK_FIXED480M>;
+			clock-names = "cpu", "pll8", "fixed480";
 			next-level-cache = <&l2>;
 		};
 	};
@@ -34,6 +38,35 @@
 		compatible = "arm,cortex-a9-pmu";
 		interrupts = <GIC_SPI 112 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-affinity = <&cpu0>;
+	};
+
+	cpu_opp_table: opp-table-cpu {
+		compatible = "operating-points-v2";
+
+		opp-240000000 {
+			opp-hz = /bits/ 64 <240000000>;
+			opp-microvolt = <950000>;
+			clock-latency-ns = <300000>;
+			opp-suspend;
+		};
+
+		opp-480000000 {
+			opp-hz = /bits/ 64 <480000000>;
+			opp-microvolt = <950000>;
+			clock-latency-ns = <300000>;
+		};
+
+		opp-800000000 {
+			opp-hz = /bits/ 64 <800000000>;
+			opp-microvolt = <950000>;
+			clock-latency-ns = <300000>;
+		};
+
+		opp-960000000 {
+			opp-hz = /bits/ 64 <960000000>;
+			opp-microvolt = <950000>;
+			clock-latency-ns = <300000>;
+		};
 	};
 
 	soc {
