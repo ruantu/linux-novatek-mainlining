@@ -256,6 +256,15 @@
 			status = "disabled";
 		};
 
+		ir: ir-receiver@f0250000 {
+			compatible = "novatek,na51089-ir";
+			reg = <0xf0250000 0x2c>;
+			clocks = <&cgu NA51089_CLK_REMOTE>;
+			interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+			resets = <&cgu NA51089_RESET_REMOTE>;
+			status = "disabled";
+		};
+
 		adc: adc@f0260000 {
 			compatible = "novatek,na51089-adc";
 			reg = <0xf0260000 0x84>;
