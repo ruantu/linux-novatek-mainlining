@@ -3285,6 +3285,7 @@ F:	drivers/crypto/novatek-rsa.c
 F:	drivers/gpio/gpio-novatek.c
 F:	drivers/i2c/busses/i2c-novatek.c
 F:	drivers/iio/adc/novatek-adc.c
+F:	drivers/media/rc/novatek-ir.c
 F:	drivers/mfd/novatek-pwmss.c
 F:	drivers/mfd/novatek-rtcsys.c
 F:	drivers/mmc/host/novatek-mmc.c

@@ -303,6 +303,18 @@ config IR_MTK
 	   To compile this driver as a module, choose M here: the
 	   module will be called mtk-cir.
 
+config IR_NOVATEK
+	tristate "Novatek IR remote receiver"
+	depends on ARCH_NOVATEK || COMPILE_TEST
+	depends on OF && HAS_IOMEM
+	select BITREVERSE
+	help
+	  Say Y here to enable the infrared receiver on Novatek NT9856x
+	  (NA51089) SoCs. It supports NEC and JVC hardware decoding.
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called novatek-ir.
+
 config IR_NUVOTON
 	tristate "Nuvoton w836x7hg Consumer Infrared Transceiver"
 	depends on PNP || COMPILE_TEST

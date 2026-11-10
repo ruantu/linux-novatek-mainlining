@@ -40,6 +40,7 @@ obj-$(CONFIG_IR_MCEUSB) += mceusb.o
 obj-$(CONFIG_IR_MESON) += meson-ir.o
 obj-$(CONFIG_IR_MESON_TX) += meson-ir-tx.o
 obj-$(CONFIG_IR_MTK) += mtk-cir.o
+obj-$(CONFIG_IR_NOVATEK) += novatek-ir.o
 obj-$(CONFIG_IR_NUVOTON) += nuvoton-cir.o
 obj-$(CONFIG_IR_PWM_TX) += pwm-ir-tx.o
 obj-$(CONFIG_IR_REDRAT3) += redrat3.o
