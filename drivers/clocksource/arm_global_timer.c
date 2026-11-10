@@ -352,6 +352,11 @@ static const struct gt_prescaler_config gt_prescaler_configs[] = {
 	 */
 	{ .compatible = "ti,am43", .prescaler = 50 },
 	{ .compatible = "xlnx,zynq-7000", .prescaler = 2 },
+	/*
+	 * NA51089 boots at 960 MHz and clocks the timer at CPU/8. Dividing
+	 * by 12 gives a 10 MHz timer rate compatible with all CPU OPPs.
+	 */
+	{ .compatible = "novatek,na51089", .prescaler = 12 },
 	{ .compatible = NULL }
 };
 
