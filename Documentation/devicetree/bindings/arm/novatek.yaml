@@ -21,6 +21,32 @@ properties:
     contains:
       const: novatek,na51089
 
+  cpus:
+    type: object
+    additionalProperties: true
+
+    patternProperties:
+      '^cpu@[0-9a-f]+$':
+        type: object
+        additionalProperties: true
+
+        properties:
+          clocks:
+            items:
+              - description: CPU clock mux output
+              - description: Programmable PLL8 CPU clock source
+              - description: Fixed 480 MHz CPU clock source
+
+          clock-names:
+            items:
+              - const: cpu
+              - const: pll8
+              - const: fixed480
+
+        dependentRequired:
+          clocks: [clock-names]
+          clock-names: [clocks]
+
 required:
   - compatible
 
