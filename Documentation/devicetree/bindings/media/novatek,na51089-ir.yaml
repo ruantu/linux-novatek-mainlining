@@ -1,0 +1,56 @@
+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/media/novatek,na51089-ir.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: Novatek NA51089 infrared receiver
+
+maintainers:
+  - Yu-Tung Chang <mtwget@gmail.com>
+
+allOf:
+  - $ref: rc.yaml#
+
+properties:
+  compatible:
+    const: novatek,na51089-ir
+
+  reg:
+    maxItems: 1
+
+  clocks:
+    maxItems: 1
+
+  interrupts:
+    maxItems: 1
+
+  resets:
+    maxItems: 1
+
+  wakeup-source: true
+
+required:
+  - compatible
+  - reg
+  - clocks
+  - interrupts
+  - resets
+
+unevaluatedProperties: false
+
+examples:
+  - |
+    #include <dt-bindings/clock/novatek,na51089-clock.h>
+    #include <dt-bindings/interrupt-controller/arm-gic.h>
+    #include <dt-bindings/reset/novatek,na51089-reset.h>
+
+    ir: ir-receiver@f0250000 {
+        compatible = "novatek,na51089-ir";
+        reg = <0xf0250000 0x2c>;
+        clocks = <&cgu NA51089_CLK_REMOTE>;
+        interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+        resets = <&cgu NA51089_RESET_REMOTE>;
+        pinctrl-names = "default";
+        pinctrl-0 = <&remote_pins_a>;
+    };
